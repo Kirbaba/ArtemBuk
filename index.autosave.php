@@ -30,14 +30,17 @@
 							<input type="text" class="header--enter--inp password" placeholder="Пароль">
 							<div class="header--enter--form--btn">
 								<a href="#"></a>
-							</div>
-							
+							</div>							
 						</div>						
 					</div>
-				</div>
+				</div>				
+			</header>	
+
+			<article class="commercial">		
+			</article>	
+
 				
-			</header>
-		</div>
+		</div>		
 	</div>
     
 <?php wp_footer(); ?>

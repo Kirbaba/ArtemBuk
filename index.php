@@ -39,6 +39,19 @@
 			<article class="commercial">		
 			</article>	
 
+			<nav class="navigation">
+				<ul>
+					<li><a href="#" class="navigation--link">читать книги </a></li>
+					<li><a href="#" class="navigation--link">купить книги</a></li>
+					<li><a href="#" class="navigation--link">Критика и отзывы</a></li>
+					<li><a href="#" class="navigation--link">Блог и форум</a></li>
+					<li><a href="#" class="navigation--link">путешествия </a></li>
+					<li><a href="#" class="navigation--link">Юриспруденция</a></li>
+					<li><a href="#" class="navigation--link">новости</a></li>
+					<li><a href="#" class="navigation--link">об авторе</a></li>
+				</ul>
+			</nav>
+
 				
 		</div>		
 	</div>

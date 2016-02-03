@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="description" content="">
     <link rel="icon" href="/wp-content/uploads/2015/03/657068.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/wp-content/uploads/2015/03/657068.ico" type="image/x-icon" />
@@ -13,7 +13,7 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row">
+		<div class="">
 			<header class="header">
 				<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-xs-12">
 					<div class="header--title">
@@ -52,7 +52,22 @@
 				</ul>
 			</nav>
 
-				
+			<section class="main-content">
+				<div class="row">
+					<div class="col-lg-4 col-lg-push-8 col-md-4 col-md-push-8 col-sm-12 col-xs-12">
+						<div class="welcome">
+							<div class="welcome__head">
+								<h4>Добро пожаловать на сайт писателя и путешественника Артема Бука!</h4>
+							</div>
+							<div class="welcome__box">
+								<p>Здесь вы можете читать и обсуждать книги серии «Революция крови».</p>
+								<p>Другие разделы сайта посвящены самостоятельным путешествиям, а также, да простят меня любители фантастики, актуальным проблемам правового регулирования финансовых рынков и правоохранительной деятельности.</p>
+							</div>
+						</div>
+					</div>
+  					<div class="col-lg-8 col-lg-pull-4 col-md-8 col-md-pull-4 col-sm-12 col-xs-12">.col-md-3 .col-md-pull-9</div>
+				</div>
+			</section>				
 		</div>		
 	</div>
     

@@ -15,3 +15,83 @@
 	background-image: linear-gradient(bottom, rgba(0,0,0,.25) 0%, rgba(0,0,0,.5) 100%);
 }
 
+.main-content {
+	display: block;
+	float: left;
+	position: relative;
+	width: 100%;
+	margin: 15px 0;	
+}
+
+.welcome {
+	width: 100%;
+	height: 416px;
+	border: 1px solid #000;
+	background-color: #0e0e0e;
+	background-image: url('../img/Bottom.png');
+	background-repeat: no-repeat;
+	-webkit-background-size: 100%;
+	     -o-background-size: 100%;
+	        background-size: 100%;
+	background-position: 50% 97%;
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.36), inset 0px 0px 1px 1px rgba(255,255,255,0.4);
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.36), inset 0px 0px 1px 1px rgba(255,255,255,0.4);
+	box-shadow: 0 0 5px rgba(0,0,0,0.36), inset 0px 0px 1px 1px rgba(255,255,255,0.4);
+	@include border-radius(10px);
+	padding: 10px 1px 8%;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	&__head {
+		display: block;
+		float: left;
+		width: 100%;
+		height: auto;
+		background-image: url('../img/welcom-head.png');
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+		padding: 5px 0;
+		
+		h4 {
+			color: #FFF;
+			text-align: center;
+			font-family: $os;
+			font-size: 14px;
+			text-align: center;
+			text-shadow: 0 -1px 1px #000;
+			font-weight: 600;
+		}
+	}
+	&__box {
+		display: block;
+		float: left;
+		position: relative;
+		width: 100%;
+		padding: 60px 20px;
+		p {
+			color: #b4b9be;
+			font-size: 14px;
+			text-align: center;
+		}
+		&:before, &:after {
+			content: "";
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			height: 50px;
+			width: 100%;
+			position: absolute;
+			left: 0;
+		}
+		&:before {
+			background-image: url('../img/ornament-top.png');
+			top: 0;
+		}
+		&:after {
+			background-image: url('../img/ornament-bot.png');
+			bottom: 0;
+		}
+	}
+}
+

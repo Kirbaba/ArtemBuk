@@ -21,6 +21,86 @@
 	position: relative;
 	width: 100%;
 	margin: 15px 0;	
+	&__item {
+		display: block;
+		float: left;
+		position: relative;
+		width: 100%;
+		height: 200px;
+		margin-bottom: 15px;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		@include border-radius(10px);
+		background-color: #0e0e0e;
+		background-image: url('../img/Bottom.png');
+		background-repeat: no-repeat;
+		-webkit-background-size: 100%;
+		     -o-background-size: 100%;
+		        background-size: 100%;
+		background-position: 50% 95%;
+		padding: 10px 1px 7%;
+		-moz-box-shadow: 0 0 5px rgba(0,0,0,0.36), inset 0px 0px 1px 1px rgba(255,255,255,0.4);
+		-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.36), inset 0px 0px 1px 1px rgba(255,255,255,0.4);
+		box-shadow: 0 0 5px rgba(0,0,0,0.36), inset 0px 0px 1px 1px rgba(255,255,255,0.4);
+		text-decoration: none;
+		color: #FFF;
+		&__head {		
+			display: block;
+			float: left;
+			width: 100%;
+			height: auto;
+			background-image: url('../img/item--head.png');
+			background-repeat: no-repeat;
+			-webkit-background-size: cover;
+			     -o-background-size: cover;
+			        background-size: cover;
+			padding: 10px 0;			
+			h3 {
+				color: #FFF;
+				text-align: center;
+				font-family: $os;
+				font-size: 16px;
+				margin: 10px 0;
+				text-align: center;
+				text-shadow: 0 -1px 1px #000;
+				font-weight: 700;
+			}
+		}
+		&__body {
+			display: block;
+			float: left;
+			position: relative;
+			width: 100%;
+			padding: 50px 20px 0;
+			margin-bottom: 40px;
+			p {
+				color: #b4b9be;
+				font-size: 14px;
+				text-align: center;
+			}
+			&:before, &:after {
+				content: "";
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+				height: 50px;
+				width: 100%;
+				position: absolute;
+				left: 0;
+				background-image: url('../img/ornament-top.png');
+				top: 0;
+			}
+		}
+		.about-author {
+			background-image: url('../img/trips.png');
+			background-repeat: no-repeat;
+			-webkit-background-size: cover;
+			     -o-background-size: cover;
+			        background-size: cover;
+			background-position: 50% 50%;
+			height: 108px;
+		}
+	}
 }
 
 .welcome {

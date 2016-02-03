@@ -27,7 +27,7 @@
 						<a href="#" class="header--enter--but">Зарегистрироваться</a>
 						<div class="header--enter--form">
 							<input type="text" class="header--enter--inp login" placeholder="Логин">
-							<input type="text" class="header--enter--inp password" placeholder="Пароль">
+							<input type="password" class="header--enter--inp password" placeholder="Пароль">
 							<div class="header--enter--form--btn">
 								<a href="#"></a>
 							</div>							

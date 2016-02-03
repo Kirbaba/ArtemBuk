@@ -9,7 +9,7 @@
 		position: absolute;
 		z-index: -1;
 		width: 95%;
-		height: 60px;
+		height: 54px;
 		top: 7px;
 		left: 50%;
 		-webkit-transform: translateX(-50%);
@@ -63,7 +63,7 @@
 		float: left;
 		text-align: center;
 		width: 100%;	
-		height: 46px;
+		height: 40px;
 		-moz-border-radius: 18px / 15px;
 		-webkit-border-radius: 18px / 15px;
 		border-radius: 18px / 15px;
@@ -83,7 +83,7 @@
 		z-index: 1;	
 		li {
 			display: inline-block;
-			padding: 7px 0;
+			padding: 4px 0;
 			margin: 2px 0 2px -4px;
 			&:last-child {
 				a {

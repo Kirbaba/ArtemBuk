@@ -1,0 +1,34 @@
+.footer {
+	display: block;
+	float: left;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background-color: #000;
+	background-image: url('../img/footer_bg.png');
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+	background-position: 50% 0;
+	padding: 10px 0;
+	color: #FFF;
+	font-size: 14px;
+	&--enter {
+		text-align: center;
+		a {
+			color: #FFF;
+			text-decoration: none;
+			font-size: 14px;
+			&:hover {
+				color: rgb(255, 246, 0);
+			}	
+			
+		}
+	}
+	&--right {
+		text-align: right;
+	}
+}

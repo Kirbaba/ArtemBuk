@@ -59,6 +59,9 @@
 		   -moz-box-sizing: border-box;
 		        box-sizing: border-box;
 		padding: 10px;
+		&--wrap {
+			padding: 10px 50px;
+		}
 	}
 	&__scrolltext {
 		height: 305px;

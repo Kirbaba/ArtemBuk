@@ -8,14 +8,14 @@
 			<div class="page__body">
 				<div class="col-xs-3">
 
-				<a class="author__photo--item" href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-					<img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-3.jpg" alt=""/>
+				<a class="author__photo--item" href="https://pp.vk.me/c630317/v630317038/115d8/odPfTLjynQc.jpg" data-lightbox="example-set" data-title="Описание фото.">
+					<img class="example-image" src="https://pp.vk.me/c630317/v630317038/115d8/odPfTLjynQc.jpg" alt=""/>
 				</a>
-				<a class="author__photo--item" href="http://lokeshdhakar.com/projects/lightbox2/images/image-4.jpg" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard.">
-					<img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-4.jpg" alt="" />
+				<a class="author__photo--item" href="https://pp.vk.me/c630317/v630317038/115e1/3J_ziGPF4Tg.jpg" data-lightbox="example-set" data-title="Описание фото.">
+					<img class="example-image" src="https://pp.vk.me/c630317/v630317038/115e1/3J_ziGPF4Tg.jpg" alt="" />
 				</a>
-				<a class="author__photo--item" href="http://lokeshdhakar.com/projects/lightbox2/images/image-5.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing.">
-					<img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-5.jpg" alt="" />
+				<a class="author__photo--item" href="https://pp.vk.me/c629521/v629521038/2cafa/68MJBC7aXqY.jpg" data-lightbox="example-set" data-title="Описание фото.">
+					<img class="example-image" src="https://pp.vk.me/c629521/v629521038/2cafa/68MJBC7aXqY.jpg" alt="" />
 				</a>
 			     
 				
@@ -28,12 +28,14 @@
 					</article>
 				</div>
 				<div class="col-xs-3">
-					<a class="author__photo--item" href="http://lokeshdhakar.com/projects/lightbox2/images/image-6.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-6.jpg" alt="" /></a>
-					<a href="<?php bloginfo('template_directory'); ?>/img/photo1.jpg" class="author__photo--item"  data-lightbox="example-set" >
-						<img src="<?php bloginfo('template_directory'); ?>/img/photo1.jpg" alt="">
+					<a class="author__photo--item" href="https://pp.vk.me/c630317/v630317038/115cf/kx-QP50wnIo.jpg" data-lightbox="example-set" data-title="Описание фото.">
+						<img class="example-image" src="https://pp.vk.me/c630317/v630317038/115cf/kx-QP50wnIo.jpg" alt="" />
 					</a>
-					<a href="<?php bloginfo('template_directory'); ?>/img/photo1.jpg" class="author__photo--item" data-lightbox="example-set" >
-						<img src="<?php bloginfo('template_directory'); ?>/img/photo1.jpg" alt="">
+					<a href="https://pp.vk.me/c629521/v629521038/2cb03/nCWEXPdoPDc.jpg" class="author__photo--item"  data-lightbox="example-set" data-title="Описание фото.">
+						<img src="https://pp.vk.me/c629521/v629521038/2cb03/nCWEXPdoPDc.jpg" alt="">
+					</a>
+					<a href="https://pp.vk.me/c630317/v630317038/11544/XNEK-1yNI4c.jpg" class="author__photo--item" data-lightbox="example-set" data-title="Описание фото.">
+						<img src="https://pp.vk.me/c630317/v630317038/11544/XNEK-1yNI4c.jpg" alt="">
 					</a>
 				</div>
 				

@@ -36,7 +36,7 @@ jQuery(document).ready( function(){
 
     (function () {
          lightbox.option({
-            'albumLabel': false
+            'albumLabel': ""
          });
     })(jQuery);
 

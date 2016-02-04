@@ -51,3 +51,5 @@
 				<li><a href="#" class="navigation--link">об авторе</a></li>
 			</ul>
 		</nav>
+		<section class="main-content">
+			<div class="row">

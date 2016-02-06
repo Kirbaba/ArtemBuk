@@ -5,6 +5,7 @@
 			<h3>Путешествия / Полинезия</h3>
 		</div>
 		<div class="page__body page__body--wrap page__scrolltext single-category">
+
 			<a href="#" class="single-category__item">
 				<span class="single-category__item--img">
 					<img class="" src="<?php bloginfo('template_directory'); ?>/img/@Elf@.jpg" alt="">
@@ -53,6 +54,7 @@
 				</span>
 				<span class="single-category__item--desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis accusantium autem, qui illo quidem ipsum!</span>
 			</a>
+			<div class="preloader"></div>
 		</div>
 	</div>
 </div>

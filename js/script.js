@@ -27,7 +27,7 @@ jQuery(document).ready( function(){
 
     (function(){
         $(window).load(function(){
-            $('#preloader').fadeOut('slow',function(){
+            $('.preloader').fadeOut('slow',function(){
                 $(this).remove();
             });
             $(".page__scrolltext").mCustomScrollbar({
@@ -45,7 +45,7 @@ jQuery(document).ready( function(){
 
     (function(){
         var i = 0;
-        $('span.single-category__item--img').each(function(){
+        $('span.single-category__item--img').each(function(){            
             if (i == 0 || i==1) {}
             else if (i == 2 || i == 3) {
                 $(this).css({

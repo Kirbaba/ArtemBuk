@@ -23,7 +23,7 @@
 				<div class="col-xs-6">
 
 					<article class="page__scrolltext">
-						<div id="preloader"></div>
+						<div class="preloader"></div>
 						<?php the_content(); ?>
 					</article>
 				</div>

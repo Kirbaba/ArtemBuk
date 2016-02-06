@@ -1,3 +1,5 @@
+
+
 jQuery(document).ready( function(){
     $(function() {
 
@@ -40,6 +42,27 @@ jQuery(document).ready( function(){
          });
     })(jQuery);
 
+
+    (function(){
+        var i = 0;
+        $('span.single-category__item--img').each(function(){
+            if (i == 0 || i==1) {}
+            else if (i == 2 || i == 3) {
+                $(this).css({
+                    "float":"right",
+                    "margin-right":"3.33%"
+                });
+                $(this).next().css("margin-left","0");
+            }
+            i++;
+            if(i == 4){
+                i = 0;
+            }
+        });
+        
+    })(jQuery);
     
 });
+
+
 

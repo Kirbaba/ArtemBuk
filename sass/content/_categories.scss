@@ -38,3 +38,46 @@
 		}
 	}
 }
+
+.single-category {
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+    padding: 10px 20px 5px;
+    height: 320px;
+	&__item {
+		display: block;
+		float: left;
+		position: relative;
+		width: 50%;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		padding: 0 10px;
+		text-decoration: none;
+		color: #FFF;
+		&--img {
+			@extend .author__photo--item;
+			display: block;
+			float: left;
+			position: relative;
+			width: 1 / 3 * 100%;
+		}
+		&--desc {
+			@extend .author__photo--item;
+			display: block;
+			float: left;
+			position: relative;
+			width: 60%;
+			margin: 0 3%;
+			-webkit-box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+			        box-sizing: border-box;
+			padding: 15px;
+			text-align: center;			
+		}
+		&:hover {
+			color: $y;
+			background-color: lighten(#000,5%);
+		}
+	}
+}

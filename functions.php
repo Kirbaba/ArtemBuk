@@ -72,5 +72,127 @@ add_filter('excerpt_more', 'excerpt_readmore');
 if ( function_exists( 'add_theme_support' ) )
     add_theme_support( 'post-thumbnails' );
 
+/*--------------------------------------------- МЕНЮ НАВИГАЦИИ -------------------------------------------------------*/
+
+function theme_register_nav_menu() {
+    register_nav_menus( array(
+        'primary' => 'Меню в шапке',
+
+    ) );
+    //register_nav_menu( 'primary', 'Главное меню' );
+}
+add_action( 'after_setup_theme', 'theme_register_nav_menu' );
+
+
+/*-------------------------------------------- КОНЕЦ МЕНЮ НАВИГАЦИИ --------------------------------------------------*/
+
+/*------------------------------------------------ НАСТРОЙКИ ТЕМЫ ----------------------------------------------------*/
+add_action('customize_register', function($customizer){
+    /*Меню настройки контактов*/
+    $customizer->add_section(
+        'contacts_section',
+        array(
+            'title' => 'Настройки контактов',
+            'description' => 'Контакты',
+            'priority' => 35,
+        )
+    );
+
+    $customizer->add_setting(
+        'mail_textbox',
+        array('default' => 'artembukworld@gmail.com')
+    );
+
+    $customizer->add_control(
+        'mail_textbox',
+        array(
+            'label' => 'Почта',
+            'section' => 'contacts_section',
+            'type' => 'text',
+        )
+    );
+
+
+    /*Меню настройки соцсетей*/
+    $customizer->add_section(
+        'social_section',
+        array(
+            'title' => 'Социальные сети',
+            'description' => 'Соц. сети',
+            'priority' => 35,
+        )
+    );
+
+    $customizer->add_setting(
+        'vk_textbox',
+        array('default' => 'vk.com')
+    );
+    $customizer->add_setting(
+        'fb_textbox',
+        array('default' => 'fb.com')
+    );
+    $customizer->add_setting(
+        'inst_textbox',
+        array('default' => 'instagram.com')
+    );
+    $customizer->add_setting(
+        'tw_textbox',
+        array('default' => 'twitter.com')
+    );
+    $customizer->add_setting(
+        'ok_textbox',
+        array('default' => 'ok.ru')
+    );
+
+    $customizer->add_control(
+        'vk_textbox',
+        array(
+            'label' => 'VK',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_control(
+        'fb_textbox',
+        array(
+            'label' => 'Facebook',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_control(
+        'inst_textbox',
+        array(
+            'label' => 'Instagram',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_control(
+        'tw_textbox',
+        array(
+            'label' => 'Twitter',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_control(
+        'ok_textbox',
+        array(
+            'label' => 'Одноклассники',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+
+
+});
+/*---------------------------------------------- КОНЕЦ НАСТРОЕК ТЕМЫ -------------------------------------------------*/
+
+/*---------------------------------------- АВТОРИЗАЦИЯ И РЕГИСТРАЦИЯ -------------------------------------------------*/
+
+
+/*------------------------------------- КОНЕЦ АВТОРИЗАЦИИ И РЕГИСТРАЦИИ ----------------------------------------------*/
+
 
 

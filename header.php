@@ -25,13 +25,14 @@
 				<div class="header--enter">
 					<a href="#" class="header--enter--but--active">Войти</a>
 					<a href="#" class="header--enter--but">Зарегистрироваться</a>
+
 					<div class="header--enter--form">
 						<input type="text" class="header--enter--inp login" placeholder="Логин">
 						<input type="password" class="header--enter--inp password" placeholder="Пароль">
 						<div class="header--enter--form--btn">
 							<a href="#"></a>
-						</div>							
-					</div>						
+						</div>
+					</div>
 				</div>
 			</div>				
 		</header>	
@@ -40,6 +41,14 @@
 		</article>	
 
 		<nav class="navigation">
+			<ul>
+				<?php
+				$nav = wp_get_nav_menu_items('Главное');
+				foreach ( $nav as $nav_item ) {
+					echo '<li><a href="' . $nav_item->url . '" class="navigation--link">' . $nav_item->title . '</a></li>';
+				}
+				?>
+			</ul>
 			<ul>
 				<li><a href="#" class="navigation--link">читать книги </a></li>
 				<li><a href="#" class="navigation--link">купить книги</a></li>

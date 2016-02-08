@@ -9,16 +9,16 @@
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 						<div class="footer--center">
-							<a href="mailto:artembukworld@gmail.com">artembukworld@gmail.com</a>
+							<a href="mailto:<?php echo get_theme_mod('mail_textbox'); ?>"><?php echo get_theme_mod('mail_textbox'); ?></a>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 						<div class="footer--soc">
-							<a href="#"><i class="fa fa-vk"></i></a>
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-instagram"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-odnoklassniki"></i></a>
+							<a href="<?php echo get_theme_mod('vk_textbox'); ?>"><i class="fa fa-vk"></i></a>
+							<a href="<?php echo get_theme_mod('fb_textbox'); ?>"><i class="fa fa-facebook"></i></a>
+							<a href="<?php echo get_theme_mod('inst_textbox'); ?>"><i class="fa fa-instagram"></i></a>
+							<a href="<?php echo get_theme_mod('tw_textbox'); ?>"><i class="fa fa-twitter"></i></a>
+							<a href="<?php echo get_theme_mod('ok_textbox'); ?>"><i class="fa fa-odnoklassniki"></i></a>
 						</div>					
 					</div>
 				</div>				

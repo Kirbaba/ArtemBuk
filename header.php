@@ -15,14 +15,14 @@
 	<div class="container">
 		<header class="header">
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-				<div class="header--logo">
+				<a href="/" class="header--logo">
 					<div class="header--logo--img">
 						<img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="">
 					</div>
 					<div class="header--logo--slogan">
 						<h3>Революция крови разрушь старый мир</h3>
 					</div>
-				</div>
+				</a>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 				<div class="header--title">
@@ -51,14 +51,16 @@
 		</article>	
 
 		<nav class="navigation">
-			<ul>
+			<!-- <ul>
 				<?php
 				$nav = wp_get_nav_menu_items('Главное');
-				foreach ( $nav as $nav_item ) {
-					echo '<li><a href="' . $nav_item->url . '" class="navigation--link">' . $nav_item->title . '</a></li>';
+				if (!empty($nav)) {
+					foreach ( $nav as $nav_item ) {
+						echo '<li><a href="' . $nav_item->url . '" class="navigation--link">' . $nav_item->title . '</a></li>';
+					}
 				}
 				?>
-			</ul>
+			</ul> -->
 			<ul>
 				<li><a href="#" class="navigation--link">читать книги </a></li>
 				<li><a href="#" class="navigation--link">купить книги</a></li>

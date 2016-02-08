@@ -63,6 +63,7 @@
 			height: 100%;
 			padding: 0 70px 0;
 			margin-bottom: 40px;
+			background-color: rgba(0,0,0,.3);
 			p {
 				color: #b4b9be;
 				font-size: 14px;
@@ -101,8 +102,10 @@
 				// transform: none;
 				
 
-				color: rgba(236,237,237,.6);
-				text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
+				// color: rgba(236,237,237,.6);
+				// text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
+				text-shadow: 1px 1px #fff, 2px 2px #404146;
+  				color: rgba(151, 154, 158, 0.8);
 
 			}
 			// &:before, &:after {
@@ -131,24 +134,27 @@
 			height: 18px;
 			bottom: 10px;
 			left: 0;
-		}
-		.about-author {
-			background-image: url('../img/trips.png');
-			background-repeat: no-repeat;
-			-webkit-background-size: cover;
-			     -o-background-size: cover;
-			        background-size: cover;
-			background-position: 50% 50%;
-		}
-		.read-a-book {
-			@extend .about-author;
-		}
-		.contests {
-			@extend .about-author;
-		}
-		.trips {
-			@extend .about-author;
-		}
+		}		
+	}
+	.about-author {
+		background-image: url('../img/img565412.png');
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+		background-position: 50% 50%;
+	}
+	.read-a-book {
+		@extend .about-author;
+		background-image: url('../img/img8844.png');
+	}
+	.contests {
+		@extend .about-author;
+		background-image: url('../img/777.png');
+	}
+	.trips {
+		@extend .about-author;
+		background-image: url('../img/IMG_6564pp.png');
 	}
 }
 
@@ -198,17 +204,24 @@
 		float: left;
 		position: relative;
 		width: 100%;
-		padding: 60px 20px;
+		padding: 15px 20px;
 		p {
 			color: #b4b9be;
 			font-size: 14px;
 			text-align: center;
+			a {
+				color: #6A28CE;
+				text-decoration: none;
+				&:hover {
+					text-shadow: 0 0 1px #6A28CE;
+				}
+			}
 		}
-		&:before, &:after {
-			content: "";
+		&:before {
+			content: none;
 			background-position: 50% 50%;
 			background-repeat: no-repeat;
-			height: 50px;
+			height: 40px;
 			width: 100%;
 			position: absolute;
 			left: 0;

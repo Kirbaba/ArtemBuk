@@ -14,14 +14,24 @@
 <body>
 	<div class="container">
 		<header class="header">
-			<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-xs-12">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+				<div class="header--logo">
+					<div class="header--logo--img">
+						<img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="">
+					</div>
+					<div class="header--logo--slogan">
+						<h3>Революция крови разрушь старый мир</h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 				<div class="header--title">
 					<h1>артем бук</h1>
 					<h2>фантастические миры</h2>
 				</div>
 			</div>
 
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 				<div class="header--enter">
 					<a href="#" class="header--enter--but--active">Войти</a>
 					<a href="#" class="header--enter--but">Зарегистрироваться</a>

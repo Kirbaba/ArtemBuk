@@ -152,4 +152,46 @@
 			}
 		}
 	}
+	&--logo {
+		display: block;
+		float: left;
+		position: relative;
+		width: 100%;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		padding-left: 30px;
+		padding-top: 10px;
+		&--img {
+			width: 25%;
+			display: block;
+			float: left;
+			img {
+				width: 100%;
+			}
+		}
+		&--slogan {
+			display: block;
+			float: left;
+			position: relative;
+			width: 75%;
+			-webkit-box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+			        box-sizing: border-box;
+			padding: 0 45px 0 15px;
+			h3 {
+				text-shadow: 1px 1px #fff, 2px 2px #404146;
+  				color: rgba(151, 154, 158, 0.8);
+  				font-size: 16px;
+  				font-family: $os;
+  				font-weight: 900;
+  				webkit-box-sizing: content-box;
+				   -moz-box-sizing: content-box;
+				        box-sizing: content-box;
+				margin: 5px 0 0;
+				text-transform: uppercase;
+				line-height: 20px;
+			}
+		}
+	}
 }

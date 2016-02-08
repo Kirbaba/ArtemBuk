@@ -15,42 +15,34 @@
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 				<a href="#" class="main-content__item">
-					<span class="main-content__item__head">
-						<h3>Революция крови</h3>
+					<span class="main-content__item__body read-a-book">
+						<h3>Читать роман “Революция крови”</h3>
 					</span>
-					<span class="main-content__item__body">
-						<p>Серия книг о мире возможного прошлого и вероятного будущего</p>
-					</span>
+					<span class="main-content__item__foot"></span>
 				</a>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 				<a href="#" class="main-content__item">
-					<span class="main-content__item__head">
-						<h3>Путешествия</h3>
+					<span class="main-content__item__body trips">
+						<h3>Как увидеть красивейшие места мира</h3>
 					</span>
+					<span class="main-content__item__foot"></span>
+				</a>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<a href="#" class="main-content__item">
+					<span class="main-content__item__body contests">
+						<h3>Конкурсы и призы</h3>
+					</span>
+					<span class="main-content__item__foot"></span>
+				</a>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<a href="#" class="main-content__item">
 					<span class="main-content__item__body about-author">
-						<p>Путешествуйте по миру, пока от него еще что-то осталось :)</p>
+						<h3>Осторожно - прежде чем вы решитесь читать мои книги</h3>
 					</span>
-				</a>
-			</div>
-			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				<a href="#" class="main-content__item">
-					<span class="main-content__item__head">
-						<h3>Обсуждения</h3>
-					</span>
-					<span class="main-content__item__body">
-						<p>Обсуждение книг, путешествий, и всего и вся вокруг :)</p>
-					</span>
-				</a>
-			</div>
-			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				<a href="#" class="main-content__item">
-					<span class="main-content__item__head">
-						<h3>Об авторе</h3>
-					</span>
-					<span class="main-content__item__body">
-						<p>Здесь вы сможете узнать больше о жизни автора</p>
-					</span>
+					<span class="main-content__item__foot"></span>
 				</a>
 			</div>
 		</div>

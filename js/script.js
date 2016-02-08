@@ -62,6 +62,9 @@ jQuery(document).ready( function(){
         
     })(jQuery);
     
+    $('.header--logo--slogan h3, .main-content__item__body h3').gradientText({
+        colors: ['#4e5661', '#707682', '#747a85', '#a2a5b0', '#c9cbd4', '#eeeff0', '#d4d4d5', '#6c6f74', '#41444a', '#313539']
+    });
 });
 
 

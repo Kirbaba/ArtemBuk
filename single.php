@@ -22,12 +22,12 @@
                 ?>
                 <div class="page__body page__scrolltext">
                     <div class="col-xs-3">
-                        <?php foreach ($data[0] as $item) { ?>
+                        <?php if(!empty($data[0])){ foreach ($data[0] as $item) { ?>
                             <a class="author__photo--item" href="<?php echo $item['url']; ?>"
                                data-lightbox="example-set" data-title="<?php echo $item['caption']; ?>">
                                 <img class="example-image" src="<?php echo $item['url']; ?>" alt=""/>
                             </a>
-                        <? } ?>
+                        <? }} ?>
                     </div>
                     <div class="col-xs-6">
 
@@ -37,11 +37,12 @@
                         </article>
                     </div>
                     <div class="col-xs-3">
-                        <?php foreach ($data[1] as $item) { ?>
-                            <a class="author__photo--item" href="<?php echo $item['url']; ?>" data-lightbox="example-set" data-title="<?php echo $item['caption']; ?>">
+                        <?php if(!empty($data[1])){ foreach ($data[1] as $item) { ?>
+                            <a class="author__photo--item" href="<?php echo $item['url']; ?>"
+                               data-lightbox="example-set" data-title="<?php echo $item['caption']; ?>">
                                 <img class="example-image" src="<?php echo $item['url']; ?>" alt=""/>
                             </a>
-                        <? } ?>
+                        <? }} ?>
                     </div>
                     <div class="preloader"></div>
                 </div>

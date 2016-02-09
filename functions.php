@@ -196,5 +196,30 @@ add_action('customize_register', function($customizer){
 
 /*------------------------------------- КОНЕЦ АВТОРИЗАЦИИ И РЕГИСТРАЦИИ ----------------------------------------------*/
 
+/*-------------------------------------------- ШАБЛОНЫ КАТЕГОРИЙ -----------------------------------------------------*/
+
+function inherit_template()
+{
+    if (is_category())
+    {
+        $catid = get_query_var('cat');
+        $cat = &get_category($catid);
+        $parent = $cat->category_parent;
+        $cat = &get_category($parent);
+        if ($cat->cat_ID == 3)
+        {
+            if (file_exists(TM_DIR . '/category-subtrips-template.php'))
+            {
+                include (TM_DIR . '/category-subtrips-template.php');
+                exit;
+            }
+        }
+    }
+}
+
+add_action('template_redirect', 'inherit_template', 1);
+
+/*------------------------------------------ КОНЕЦ ШАБЛООВ КАТЕГОРИЙ -------------------------------------------------*/
+
 
 

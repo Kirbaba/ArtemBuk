@@ -3,3 +3,13 @@ $mag: #5c25b1;
 span.mag {
 	color: $mag;
 }
+
+span.separator{
+	display: block;
+	float: left;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0;
+	padding: 5px 0;
+}

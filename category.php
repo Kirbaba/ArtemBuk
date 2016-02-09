@@ -9,7 +9,16 @@
 					}?>
 				</div>
 			</div>
-			<div class="page__body page__body--wrap">
+			<div class="page__body page__body--wrap page__scrolltext">
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					<a href="<?php the_permalink(); ?>" class="category__item">
+						<span class="category__item--wrap">
+							<?php the_post_thumbnail(); ?>
+							<span class="category__item--title"><?php the_title(); ?></span>
+						</span>
+					</a>
+				<?php endwhile; ?>
+				<?php  endif;?>
 				<a href="#" class="category__item">
 				<span class="category__item--wrap">
 					<img src="<?php bloginfo('template_directory'); ?>/img/@Elf@.jpg" alt="">
@@ -100,6 +109,7 @@
 					<span class="category__item--title">Испания</span>
 				</span>
 				</a>
+				<div class="preloader"></div>
 			</div>
 		</div>
 	</div>

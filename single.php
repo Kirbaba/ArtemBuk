@@ -9,16 +9,19 @@
                 // retrieve all Attachments for the 'attachments' instance of post 123
                 $attachments = new Attachments('attachments', get_the_ID());
                 $data = $attachments->get_attachments();
-                $half = count($data) / 2;
-                $data = [];
-                while ($attachments->get()) :
-                    $data[] = array(
-                        'url' => $attachments->url(),
-                        'title' => $attachments->field('title'),
-                        'caption' => $attachments->field('caption'),
-                    );
-                endwhile;
-                $data = array_chunk($data, $half);
+                if(!empty($data)){
+                    $half = count($data) / 2;
+                    $data = [];
+                    while ($attachments->get()) :
+                        $data[] = array(
+                            'url' => $attachments->url(),
+                            'title' => $attachments->field('title'),
+                            'caption' => $attachments->field('caption'),
+                        );
+                    endwhile;
+                    $data = array_chunk($data, $half);
+                }
+
                 ?>
                 <div class="page__body page__scrolltext">
                     <div class="col-xs-3">

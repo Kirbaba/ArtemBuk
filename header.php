@@ -65,26 +65,28 @@
 		</article>	
 
 		<nav class="navigation">
-			<!-- <ul>
+			<!-- <ul>-->
 				<?php
 				$nav = wp_get_nav_menu_items('Главное');
 				if (!empty($nav)) {
+					echo '<ul>';
 					foreach ( $nav as $nav_item ) {
 						echo '<li><a href="' . $nav_item->url . '" class="navigation--link">' . $nav_item->title . '</a></li>';
 					}
+					echo '</ul>';
 				}
 				?>
-			</ul> -->
-			<ul>
-				<li><a href="#" class="navigation--link">читать книги </a></li>
-				<li><a href="#" class="navigation--link">купить книги</a></li>
-				<li><a href="#" class="navigation--link">Критика и отзывы</a></li>
-				<li><a href="#" class="navigation--link">Блог и форум</a></li>
-				<li><a href="#" class="navigation--link">путешествия </a></li>
-				<li><a href="#" class="navigation--link">Иллюстрации</a></li>
-				<li><a href="#" class="navigation--link">новости</a></li>
-				<li><a href="#" class="navigation--link">об авторе</a></li>
-			</ul>
+			<!--</ul> -->
+<!--			<ul>-->
+<!--				<li><a href="#" class="navigation--link">читать книги </a></li>-->
+<!--				<li><a href="#" class="navigation--link">купить книги</a></li>-->
+<!--				<li><a href="#" class="navigation--link">Критика и отзывы</a></li>-->
+<!--				<li><a href="#" class="navigation--link">Блог и форум</a></li>-->
+<!--				<li><a href="#" class="navigation--link">путешествия </a></li>-->
+<!--				<li><a href="#" class="navigation--link">Иллюстрации</a></li>-->
+<!--				<li><a href="#" class="navigation--link">новости</a></li>-->
+<!--				<li><a href="#" class="navigation--link">об авторе</a></li>-->
+<!--			</ul>-->
 		</nav>
 		<section class="main-content">
 			<div class="row">

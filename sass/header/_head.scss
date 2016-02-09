@@ -194,4 +194,53 @@
 			}
 		}
 	}
+	&--entered {
+		display: block;
+		float: left;
+		position: relative;
+		width: 100%;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		padding: 10px 75px;
+		&--photo {
+			display: block;
+			float: left;
+			width: 60px;
+			height: 60px;
+			background-image: url('../img/bord.png');
+			background-repeat: no-repeat;
+			-webkit-background-size: contain;
+			     -o-background-size: contain;
+			        background-size: contain;
+			-webkit-box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+			        box-sizing: border-box;
+			padding: 5px;			
+			&--wrap {
+				@include overflow-img;
+				width: 100%;
+				height: 100%;
+				display: block;
+				position: relative;
+			}
+		}
+		&--links {
+			display: block;
+			float: left;
+			width: calc(100% - 60px);
+			-webkit-box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+			        box-sizing: border-box;
+			padding-left: 25px;
+			a {
+				display: block;
+				float: left;
+				width: 100%;
+				color: #F4F4F4;
+				font-size: 9px;
+				margin: 0;
+			}
+		}
+	}
 }

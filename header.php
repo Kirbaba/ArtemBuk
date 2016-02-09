@@ -32,7 +32,7 @@
 			</div>
 
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-				<div class="header--enter">
+				<!-- <div class="header--enter">
 					<a href="#" class="header--enter--but--active">Войти</a>
 					<a href="#" class="header--enter--but">Зарегистрироваться</a>
 
@@ -42,6 +42,20 @@
 						<div class="header--enter--form--btn">
 							<a href="#"></a>
 						</div>
+					</div>
+				</div> -->
+				<div class="header--entered">
+					<div class="header--entered--photo">
+						<div class="header--entered--photo--wrap">
+							<img src="<?php bloginfo('template_directory'); ?>/img/photo1-1.jpg" alt="">
+						</div>						
+					</div>
+					<div class="header--entered--links">
+						<a href="#">Мой профиль</a>
+						<a href="#">Личный кабинет</a>
+						<a href="#">Личные сообщения</a>
+						<a href="#">Заказы</a>
+						<a href="#">Корзина</a>
 					</div>
 				</div>
 			</div>				

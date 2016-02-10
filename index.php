@@ -17,6 +17,7 @@
 	</div>
 	<div class="col-lg-8 col-lg-pull-4 col-md-8 col-md-pull-4 col-sm-12 col-xs-12">
 		<div class="row">
+			<?php echo do_shortcode('[blocks]'); ?>
 			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 				<a href="#" class="main-content__item read-a-book">
 					<span class="main-content__item__body">

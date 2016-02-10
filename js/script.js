@@ -67,5 +67,27 @@ jQuery(document).ready( function(){
     });
 });
 
+jQuery(function($) {
+    $('.mainpage-block').each( function(){
+
+        var id = $(this).attr('data-id');
+        console.log(id);
+        var images = [];
+
+        $('.hidden-'+id).each( function(){
+            //console.log($(this).val());
+            images.push({src: $(this).val()});
+        });
+
+        console.log(images);
+        $(this).vegas({
+            delay: 7000,
+            timer: false,
+            transitionDuration: 2000,
+            slides: images
+        });
+    });
+});
+
 
 

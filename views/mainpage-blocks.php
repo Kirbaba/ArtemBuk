@@ -1,7 +1,7 @@
 <?php if( $my_query->have_posts() ) {
     while ($my_query->have_posts()) : $my_query->the_post(); ?>
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <a href="<?php the_permalink(); ?>" class="main-content__item  mainpage-block" data-id="<?php echo get_the_ID(); ?>">
+        <a href="<?php echo get_post_meta(get_the_ID(), "link", 1); ?>" class="main-content__item  mainpage-block" data-id="<?php echo get_the_ID(); ?>">
 					<span class="main-content__item__body">
 						<h3><?php the_title(); ?></h3>
 					</span>

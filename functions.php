@@ -209,7 +209,8 @@ function inherit_template()
         $cat = &get_category($catid);
         $parent = $cat->category_parent;
         $cat = &get_category($parent);
-        if ($cat->cat_ID == 'trips')
+        //prn($cat);
+        if ($cat->slug == 'trips')
         {
             if (file_exists(TM_DIR . '/category-subtrips-template.php'))
             {
@@ -221,6 +222,19 @@ function inherit_template()
 }
 
 add_action('template_redirect', 'inherit_template', 1);
+
+add_filter( 'single_template', function ( $single_template ) {
+
+    $parent     = '3'; //Change to your category ID
+    $categories = get_categories( 'child_of=' . $parent );
+    $cat_names  = wp_list_pluck( $categories, 'name' );
+
+    if ( has_category( 'read' ) || has_category( 'reviews' ) || has_category( 'jurisprudence' )  || has_category( $cat_names ) ) {
+        $single_template = dirname( __FILE__ ) . '/single-read.php';
+    }
+    return $single_template;
+
+}, PHP_INT_MAX, 2 );
 
 /*----------------------------------------- КОНЕЦ ШАБЛОНОВ КАТЕГОРИЙ -------------------------------------------------*/
 
@@ -243,7 +257,7 @@ function my_attachments( $attachments )
         'label'         => 'Прикрепленные изображения',
 
         // all post types to utilize (string|array)
-        'post_type'     => array( 'post', 'page','mainpageblocks' ),
+        'post_type'     => array( 'mainpageblocks' ),
 
         // meta box position (string) (normal, side or advanced)
         'position'      => 'normal',

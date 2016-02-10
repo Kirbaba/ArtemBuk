@@ -20,12 +20,12 @@
 				<?php endwhile; ?>
 				<?php  endif;?>
 
-				<a href="#" class="single-category__item">
+				<!--<a href="#" class="single-category__item">
 				<span class="single-category__item--img">
 					<img class="" src="<?php bloginfo('template_directory'); ?>/img/photo8.jpg" alt="">
 				</span>
 					<span class="single-category__item--desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis accusantium autem, qui illo quidem ipsum!</span>
-				</a>
+				</a>-->
 				<div class="preloader"></div>
 			</div>
 		</div>

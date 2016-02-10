@@ -240,7 +240,7 @@ add_filter( 'single_template', function ( $single_template ) {
 
 /*--------------------------------------------- БЛОКИ НА ГЛАВНОЙ -----------------------------------------------------*/
 
-function my_attachments( $attachments )
+/*function my_attachments( $attachments )
 {
     $fields         = array(
         array(
@@ -295,7 +295,7 @@ function my_attachments( $attachments )
     $attachments->register( 'my_attachments', $args ); // unique instance name
 }
 
-add_action( 'attachments_register', 'my_attachments' );
+add_action( 'attachments_register', 'my_attachments' );*/
 
 add_action('init', 'myCustomInitMainpageBlocks');
 

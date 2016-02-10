@@ -1,6 +1,6 @@
 <? get_header() ?>
     <div class="col-xs-12">
-        <div class="page__wrapper">
+        <div class="page__wrapper" oncopy="return false">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
                 <div class="page__head">

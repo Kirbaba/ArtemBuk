@@ -19,7 +19,7 @@
 					</a>
 				<?php endwhile; ?>
 				<?php  endif;?>
-				<a href="#" class="category__item">
+				<!--<a href="#" class="category__item">
 				<span class="category__item--wrap">
 					<img src="<?php bloginfo('template_directory'); ?>/img/@Elf@.jpg" alt="">
 					<span class="category__item--title">Советы начинающим</span>
@@ -108,7 +108,7 @@
 					<img src="<?php bloginfo('template_directory'); ?>/img/photo15.jpg" alt="">
 					<span class="category__item--title">Испания</span>
 				</span>
-				</a>
+				</a>-->
 				<div class="preloader"></div>
 			</div>
 		</div>

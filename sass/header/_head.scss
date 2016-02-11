@@ -218,7 +218,12 @@
 			        box-sizing: border-box;
 			padding: 5px;			
 			&--wrap {
-				@include overflow-img;
+				img{
+					max-width: 100%;
+					height: auto;
+					position: relative;
+				}
+				//@include overflow-img;
 				width: 100%;
 				height: 100%;
 				display: block;

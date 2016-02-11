@@ -4,6 +4,7 @@ define('TM_DIR', get_template_directory(__FILE__));
 define('TM_URL', get_template_directory_uri(__FILE__));
 
 require_once TM_DIR . '/lib/Parser.php';
+require_once TM_DIR . '/lib/Registration.php';
 
 function add_style(){
     wp_enqueue_style( 'my-bootstrap-extension', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '1');
@@ -76,6 +77,14 @@ add_filter('excerpt_more', 'excerpt_readmore');
 
 if ( function_exists( 'add_theme_support' ) )
     add_theme_support( 'post-thumbnails' );
+
+add_action('after_setup_theme', 'remove_admin_bar');
+
+function remove_admin_bar() {
+    if (!current_user_can('administrator') && !is_admin()) {
+        show_admin_bar(false);
+    }
+}
 
 /*--------------------------------------------- МЕНЮ НАВИГАЦИИ -------------------------------------------------------*/
 
@@ -195,8 +204,7 @@ add_action('customize_register', function($customizer){
 /*---------------------------------------------- КОНЕЦ НАСТРОЕК ТЕМЫ -------------------------------------------------*/
 
 /*---------------------------------------- АВТОРИЗАЦИЯ И РЕГИСТРАЦИЯ -------------------------------------------------*/
-
-
+// готова, файл Registration.php
 /*------------------------------------- КОНЕЦ АВТОРИЗАЦИИ И РЕГИСТРАЦИИ ----------------------------------------------*/
 
 /*-------------------------------------------- ШАБЛОНЫ КАТЕГОРИЙ -----------------------------------------------------*/

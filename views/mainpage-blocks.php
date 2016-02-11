@@ -5,7 +5,7 @@
 					<span class="main-content__item__body">
 						<h3><?php the_title(); ?></h3>
 					</span>
-            <span class="main-content__item__foot"></span>
+<!--            <span class="main-content__item__foot"></span>-->
         </a>
 
     <?php

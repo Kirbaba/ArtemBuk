@@ -37,19 +37,19 @@
                 <?php global $current_user; ?>
                 <?php get_currentuserinfo(); ?>
             <div class="header--entered">
-					<div class="header--entered--photo">
-						<div class="header--entered--photo--wrap">
-                            <img src="<?php echo get_wp_user_avatar_src($current_user->ID, 96); ?>" alt="">
-						</div>
-					</div>
-					<div class="header--entered--links">
-						<a href="/wp-admin/profile.php">Личный кабинет</a>
-						<a href="#">Личные сообщения</a>
-						<a href="#">Заказы</a>
-						<a href="#">Корзина</a>
-                        <a href="<?php echo wp_logout_url( home_url() ); ?>">Выход</a>
-					</div>
-				</div>
+                <div class="header--entered--photo">
+                    <div class="header--entered--photo--wrap">
+                        <img src="<?php echo get_wp_user_avatar_src($current_user->ID, 96); ?>" alt="">
+                    </div>
+                </div>
+                <div class="header--entered--links">
+                    <a href="/wp-admin/profile.php">Личный кабинет</a>
+                    <a href="#">Личные сообщения</a>
+                    <a href="#">Заказы</a>
+                    <a href="#">Корзина</a>
+                    <a href="<?php echo wp_logout_url( home_url() ); ?>">Выход</a>
+                </div>
+            </div>
             <?php }else{ ?>
                 <div class="header--enter">
                     <form action="<?php echo get_option('home'); ?>/wp-login.php" method="post">

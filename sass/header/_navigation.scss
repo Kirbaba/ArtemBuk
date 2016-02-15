@@ -85,7 +85,7 @@
 			display: inline-block;
 			position: relative;
 			padding: 4px 0;
-			margin: 2px 0 2px -4px;
+			margin: 2px 0 2px -2px;
 			@include transition(.3s);
 			&:last-child {
 				a {

@@ -213,3 +213,15 @@
 		}
 	}
 }
+
+.page__reviews__item {
+	display: inline-block;
+	height: 265px;
+	width: 31%;
+	margin-right: 2%;
+	padding-right: 10px;
+	h4 {
+		font-weight: bold;
+		font-size: 16px;
+	}
+}

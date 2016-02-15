@@ -21,12 +21,12 @@
 				endwhile;
 				}
 				?>
-				<div class="page__body page__body--wrap page__scrolltext single-category">
+				<div class="page__body page__body--wrap page__scrolltext">
 
 						<?php if(!empty($data)){ foreach ($data as $item) { ?>
-							<a class="single-category__item" href="<?php echo $item['url']; ?>"
+							<a class="category__item" href="<?php echo $item['url']; ?>"
 							   data-lightbox="example-set" data-title="<?php echo $item['caption']; ?>">
-								<span class="single-category__item--img">
+								<span class="category__item--wrap">
 									<img class="example-image" src="<?php echo $item['url']; ?>" alt=""/>
 								</span>
 							</a>

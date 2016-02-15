@@ -15,7 +15,7 @@
 <body>
 <div class="container">
     <header class="header">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <div class="col-xs-4">
             <a href="/" class="header--logo">
                 <div class="header--logo--img">
                     <img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="">
@@ -25,14 +25,14 @@
                 </div>
             </a>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <div class="col-xs-4">
             <div class="header--title">
                 <h1>артем бук</h1>
                 <h2>фантастические миры</h2>
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <div class="col-xs-4">
             <?php if(is_user_logged_in()){ ?>
                 <?php global $current_user; ?>
                 <?php get_currentuserinfo(); ?>
@@ -59,8 +59,10 @@
                         <div class="header--enter--form">
                             <input id="log" name="log" type="text" class="header--enter--inp login" placeholder="Логин">
                             <input type="password" id="pwd" name="pwd" class="header--enter--inp password" placeholder="Пароль">
+                             <div class="header--enter--form--btn">
                             <input class="header--enter--form--btn" type="submit" name="submit" value="" />
-                            <input type="hidden" name="redirect_to" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
+                            </div>
+                            <input type="hidden" name="redirect_to" class="header--enter--form--btn--sub" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
                             <!--                        <div class="header--enter--form--btn">-->
                             <!--                            <a href="#"></a>-->
                             <!--                        </div>-->

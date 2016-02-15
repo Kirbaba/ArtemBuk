@@ -35,18 +35,33 @@
 		     -o-background-size: cover;
 		        background-size: cover;
 		padding: 5px 0;
-		h3 {
-			display: block;
-			float: left;
-			color: #fff;
-			font-size: 16px;
-			font-weight: bold;
+		.breadcrumbs  {			
 			margin: 0;
 			padding: 7px 10px;
 			margin-left: 20px;
 			background-image: url('../img/shad.png');
 			background-repeat: no-repeat;
 			background-position: 50% 0;
+			float: left;
+		}
+		a {
+			display: block;
+			float: left;
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+			text-decoration: none;
+			line-height: normal;
+		}
+		h3 {
+			display: block;
+			float: left;
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+			text-decoration: none;
+			line-height: normal;
+			margin: 0;
 		}
 	}
 	&__body {

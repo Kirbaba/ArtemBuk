@@ -2,6 +2,7 @@ $y: #FFF600;
 
 html, body {
     height: 100%;
+    min-width: 1024px;
 }
 
 body {
@@ -62,6 +63,21 @@ div.preloader {
 }
 
 
+@media (min-width: 320px) {
+  .container {
+    width: 1024px;
+  }
+}
 
+@media (min-width: 768px) {
+  .container {
+    width: 1024px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 1024px;
+  }
+}
 
 

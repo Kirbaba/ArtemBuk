@@ -4,15 +4,15 @@
 		<footer class="footer">
 			<div class="container">
 				<div class="footer__wrap">
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					<div class="col-xs-4">
 						<p>© “Артем Бук. Фантастические миры”</p>
 					</div>
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					<div class="col-xs-4">
 						<div class="footer--center">
 							<a href="mailto:<?php echo get_theme_mod('mail_textbox'); ?>"><?php echo get_theme_mod('mail_textbox'); ?></a>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					<div class="col-xs-4">
 						<div class="footer--soc">
 							<a href="<?php echo get_theme_mod('vk_textbox'); ?>"><i class="fa fa-vk"></i></a>
 							<a href="<?php echo get_theme_mod('fb_textbox'); ?>"><i class="fa fa-facebook"></i></a>

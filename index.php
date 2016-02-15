@@ -1,6 +1,6 @@
 ﻿<? get_header() ?>
 
-	<div class="col-lg-4 col-lg-push-8 col-md-4 col-md-push-8 col-sm-12 col-xs-12">
+	<div class="col-xs-4 col-xs-push-8">
 		<div class="welcome">
 			<div class="welcome__head">
 				<h4>Добро пожаловать на сайт писателя и путешественника Артема Бука!</h4>
@@ -15,7 +15,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-lg-8 col-lg-pull-4 col-md-8 col-md-pull-4 col-sm-12 col-xs-12">
+	<div class="col-xs-8 col-xs-pull-4">
 		<div class="row">
 			<?php echo do_shortcode('[blocks]'); ?>
 			<!--<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">

@@ -3,7 +3,12 @@
 		<div class="page__wrapper">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<div class="page__head">
-					<h3><?php the_title(); ?></h3>
+					<div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+						<?php if(function_exists('bcn_display'))
+						{
+							bcn_display();
+						}?>
+					</div>
 				</div>
 				<?php
 				// retrieve all Attachments for the 'attachments' instance of post 123

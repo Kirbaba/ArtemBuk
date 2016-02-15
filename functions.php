@@ -234,7 +234,7 @@ add_action('template_redirect', 'inherit_template', 1);
 
 add_filter( 'single_template', function ( $single_template ) {
 
-    $parent     = '3'; //Change to your category ID
+    $parent     = '2'; //Change to your category ID
     $categories = get_categories( 'child_of=' . $parent );
     $cat_names  = wp_list_pluck( $categories, 'name' );
 

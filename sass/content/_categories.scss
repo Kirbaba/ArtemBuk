@@ -75,7 +75,7 @@
 			padding: 15px;
 			text-align: center;			
 		}
-		&:hover {
+		&:hover, &:focus, &:active {
 			color: $y;
 			background-color: lighten(#000,5%);
 		}

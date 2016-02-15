@@ -72,7 +72,7 @@ jQuery(document).ready( function(){
             success: function (data) {
                 // console.log(data);
                 //$('#all').before(data);
-                $('.js-trip').before(data);
+                $('.js-trip').html(data);
             }
         });
     })

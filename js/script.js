@@ -62,6 +62,21 @@ jQuery(document).ready( function(){
         colors: ['#4e5661', '#707682', '#747a85', '#a2a5b0', '#c9cbd4', '#eeeff0', '#d4d4d5', '#6c6f74', '#41444a', '#313539'],
     });
 
+    $(document).on('click', '.js-trip', function(){
+        var id = $(this).attr('data-id');
+
+        jQuery.ajax({
+            url: myajax.url, //url, к которому обращаемся
+            type: "POST",
+            data: "action=aboutTrip&id=" + id, //данные, которые передаем. Обязательно для action указываем имя нашего хука
+            success: function (data) {
+                // console.log(data);
+                //$('#all').before(data);
+                $('.js-trip').before(data);
+            }
+        });
+    })
+
 });
 
 jQuery(function($) {

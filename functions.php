@@ -406,6 +406,32 @@ add_shortcode('blocks', 'blocksShortcode');
     add_shortcode('reviews','getReviews');
 
 /*--------------------------------------------- КОНЕЦ ОТЗЫВОВ --------------------------------------------------------*/
+/*--------------------------------------------- ПУТЕШЕСТВИЯ ----------------------------------------------------------*/
+
+// AJAX ACTION
+add_action('wp_ajax_aboutTrip', 'getTrip');
+add_action('wp_ajax_nopriv_aboutTrip', 'getTrip');
+
+function getTrip(){
+    if($_POST){
+        $post_id = $_POST['id'];
+        $post = get_post($post_id);
+
+        //thumbnail
+        $html = '<div class="modal-content--img">
+					<img src="'.wp_get_attachment_url( get_post_thumbnail_id($post_id) ).'" alt="" />
+				</div>';
+        //content
+        $content = $post->post_content;
+        $content = apply_filters('the_content', $content);
+        $content = str_replace(']]>', ']]&gt;', $content);
+        $html .= '<p>'.$content.'</p>';
+        echo $html;
+    }
+    die();
+}
+
+/*----------------------------------------- КОНЕЦ ПУТЕШЕСТВИЙ --------------------------------------------------------*/
 
 
 

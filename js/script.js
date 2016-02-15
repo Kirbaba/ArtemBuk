@@ -72,7 +72,7 @@ jQuery(document).ready( function(){
             success: function (data) {
                 // console.log(data);
                 //$('#all').before(data);
-                $('.js-trip').html(data);
+                $('.js-trip-modal').html(data);
             }
         });
     })
@@ -100,5 +100,12 @@ jQuery(function($) {
         });
     });
 
+});
+
+jQuery(function($){
+    $('#myModal').on('hidden.bs.modal', function () {
+        // do something…
+        $('.js-trip-modal').html('');
+    })
 });
 

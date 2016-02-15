@@ -29,6 +29,11 @@ function add_script(){
     wp_enqueue_script( 'gradient-js', get_template_directory_uri() . '/js/pxgradient-1.0.3.js', array(), '1');
     wp_enqueue_script( 'my-script', get_template_directory_uri() . '/js/script.js', array(), '1');
     //wp_enqueue_script( 'fotorama-js', get_template_directory_uri() . '/js/fotorama.js', array(), '1');
+    wp_localize_script('my-script', 'myajax',
+        array(
+            'url' => admin_url('admin-ajax.php')
+        )
+    );
 
 }
 

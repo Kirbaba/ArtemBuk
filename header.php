@@ -72,9 +72,9 @@
             <?php } ?>
         </div>
     </header>
-
+<!-- 
     <article class="commercial">
-    </article>
+    </article> -->
 
     <nav class="navigation">
         <!-- <ul>-->

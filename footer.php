@@ -14,11 +14,11 @@
 					</div>
 					<div class="col-xs-4">
 						<div class="footer--soc">
-							<a href="<?php echo get_theme_mod('vk_textbox'); ?>"><i class="fa fa-vk"></i></a>
-							<a href="<?php echo get_theme_mod('fb_textbox'); ?>"><i class="fa fa-facebook"></i></a>
-							<a href="<?php echo get_theme_mod('inst_textbox'); ?>"><i class="fa fa-instagram"></i></a>
-							<a href="<?php echo get_theme_mod('tw_textbox'); ?>"><i class="fa fa-twitter"></i></a>
-							<a href="<?php echo get_theme_mod('ok_textbox'); ?>"><i class="fa fa-odnoklassniki"></i></a>
+							<a href="<?php echo get_theme_mod('vk_textbox'); ?>" target="_blank"><i class="fa fa-vk"></i></a>
+							<a href="<?php echo get_theme_mod('fb_textbox'); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+							<a href="<?php echo get_theme_mod('inst_textbox'); ?>" target="_blank"><i class="fa fa-instagram"></i></a>
+<!--							<a href="--><?php //echo get_theme_mod('tw_textbox'); ?><!--"><i class="fa fa-twitter"></i></a>-->
+<!--							<a href="--><?php //echo get_theme_mod('ok_textbox'); ?><!--"><i class="fa fa-odnoklassniki"></i></a>-->
 						</div>					
 					</div>
 				</div>				

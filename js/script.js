@@ -1,26 +1,25 @@
 jQuery(document).ready( function(){
-    $(function() {
 
-        $(window).scroll(function() {
-            if($(this).scrollTop() != 0) {
-                $('#toTop').fadeIn();
-            } else {
-                $('#toTop').fadeOut();
-            }
-        });
-        $('#toTop').click(function() {
-            $('body,html').animate({scrollTop: 0}, 1000);
-        });
+    $(window).scroll(function() {
+        if($(this).scrollTop() != 0) {
+            $('#toTop').fadeIn();
+        } else {
+            $('#toTop').fadeOut();
+        }
+    });
 
-        $('.smoothScroll').click(function(event) {
-            event.preventDefault();
-            var href=$(this).attr('href');
-            var target=$(href);
-            var top=target.offset().top;
-            $('html,body').animate({
-                scrollTop: top
-            }, 1000);
-        });
+    $('#toTop').click(function() {
+        $('body,html').animate({scrollTop: 0}, 1000);
+    });
+
+    $('.smoothScroll').click(function(event) {
+        event.preventDefault();
+        var href=$(this).attr('href');
+        var target=$(href);
+        var top=target.offset().top;
+        $('html,body').animate({
+            scrollTop: top
+        }, 1000);
     });
 
     (function(){
@@ -39,7 +38,6 @@ jQuery(document).ready( function(){
             'albumLabel': ""
          });
     })(jQuery);
-
 
     (function(){
         var i = 0;
@@ -60,7 +58,6 @@ jQuery(document).ready( function(){
         
     })(jQuery);
 
-    
     var api = $('.header--logo--slogan h3').gradientText({
         colors: ['#4e5661', '#707682', '#747a85', '#a2a5b0', '#c9cbd4', '#eeeff0', '#d4d4d5', '#6c6f74', '#41444a', '#313539'],
     });

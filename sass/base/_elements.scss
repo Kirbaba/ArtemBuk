@@ -40,3 +40,14 @@ span.separator{
 		}
 	}
 }
+
+.modal-header{
+	padding: 0 15px 0 15px;
+	border-bottom:none;
+	.close{
+		outline: none;
+		color: #ffffff;
+		font-size: 40px;
+		opacity: 1;
+	}
+}

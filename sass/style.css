@@ -667,7 +667,7 @@ span.separator {
   -webkit-background-size: 100%;
   -o-background-size: 100%;
   background-size: 100%;
-  background-position: 50% 97%;
+  background-position: 50% 98%;
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.36), inset 0px 0px 1px 1px rgba(255, 255, 255, 0.4);
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.36), inset 0px 0px 1px 1px rgba(255, 255, 255, 0.4);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.36), inset 0px 0px 1px 1px rgba(255, 255, 255, 0.4);
@@ -675,7 +675,7 @@ span.separator {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   border-radius: 10px;
-  padding: 10px 1px 2%;
+  padding: 5px 1px 2%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
@@ -692,7 +692,7 @@ span.separator {
   padding: 5px 0; }
   .page__head .breadcrumbs {
     margin: 0;
-    padding: 7px 10px;
+    padding: 3px 10px;
     margin-left: 20px;
     background-image: url("../img/shad.png");
     background-repeat: no-repeat;
@@ -728,9 +728,9 @@ span.separator {
   .page__body--wrap {
     padding: 10px 50px; }
 .page__scrolltext {
-  height: 305px;
+  height: 328px;
   box-sizing: border-box;
-  padding: 20px 0 20px 20px;
+  padding: 10px 0 10px 20px;
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.36), inset 0px 0px 1px 1px rgba(255, 255, 255, 0.1);
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.36), inset 0px 0px 1px 1px rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.36), inset 0px 0px 1px 1px rgba(255, 255, 255, 0.1);

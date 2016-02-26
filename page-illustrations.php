@@ -26,14 +26,14 @@
 				endwhile;
 				}
 				?>
-				<div class="page__body page__body--wrap page__scrolltext">
+				<div class="page__body page__body--wrap page__scrolltext illustration wall">
 
 						<?php if(!empty($data)){ foreach ($data as $item) { ?>
-							<a class="category__item" href="<?php echo $item['url']; ?>"
+							<a class="illustration__item article" href="<?php echo $item['url']; ?>"
 							   data-lightbox="example-set" data-title="<?php echo $item['caption']; ?>">
-								<span class="category__item--wrap">
-									<img class="example-image" src="<?php echo $item['url']; ?>" alt=""/>
-								</span>
+								
+								<img class="example-image" src="<?php echo $item['url']; ?>" alt=""/>
+								
 							</a>
 						<? }} ?>
 

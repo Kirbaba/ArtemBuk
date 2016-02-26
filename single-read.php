@@ -11,9 +11,6 @@
                     </div>
 <!--                    <input type="button" class="page--bookmark" value="Закладка" onclick="document.getElementById('readtext').focus(); pasteHtmlAtCaret('<span id=\'bookmark\'><i class=\'fa fa-bookmark-o\'></i></span>');">-->
 <!--                    <h3>--><?php //the_title(); ?><!--</h3>-->
-                    <?php if(in_category('read')){?>
-                        <a class="bookmarkBut" href="#bookmark"><i class="fa fa-bookmark"></i></a>
-                   <?php } ?>
 
                 </div>
                 <div class="page__body page__scrolltext">

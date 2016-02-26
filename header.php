@@ -30,6 +30,8 @@
         </div>
 
         <div class="col-xs-4">
+            <a class="bookmarkBut" href="#bookmark"><i class="fa fa-bookmark"></i></a>
+
             <?php if(is_user_logged_in()){ ?>
                 <?php global $current_user; ?>
                 <?php get_currentuserinfo(); ?>

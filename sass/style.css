@@ -82,6 +82,7 @@ span.separator {
   padding: 0; }
 
 .bookmarkBut {
+  z-index: 9;
   padding: 3px 10px;
   color: #6a27ce !important;
   position: absolute;

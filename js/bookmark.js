@@ -13,7 +13,7 @@ jQuery(document).ready(function () {
         $(this).before('<p id="bookmark"><i class="fa fa-bookmark"></i></p>');
 
         var index = $('#bookmark').index("p");
-        Cookies.set('bookmark', {link: post_link, pos: index, id: post_id}, {expires: 7});
+        Cookies.set('bookmark', {link: post_link, pos: index, id: post_id}, {expires: 30});
 
         setBookmarkLink();
     });

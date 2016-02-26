@@ -81,6 +81,14 @@ span.separator {
   margin: 0 10px;
   padding: 0; }
 
+.bookmarkBut {
+  padding: 3px 10px;
+  color: #ff3633 !important; }
+
+p#bookmark {
+  color: #ff3633;
+  font-size: 16px; }
+
 .modal-dialog {
   height: 90%;
   width: 85%; }
@@ -715,6 +723,8 @@ span.separator {
     text-decoration: none;
     line-height: normal;
     margin: 0; }
+.page--bookmark {
+  float: right; }
 .page__body {
   display: block;
   float: left;

@@ -64,6 +64,9 @@
 			margin: 0;
 		}
 	}
+	&--bookmark{
+		float: right;
+	}
 	&__body {
 		display: block;
 		float: left;

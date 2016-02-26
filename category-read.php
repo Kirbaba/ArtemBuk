@@ -10,6 +10,7 @@
 				</div>
 			</div>
 			<div class="page__body page__body--wrap page__scrolltext">
+				<?php query_posts( array( 'posts_per_page' => -1, 'category_name' => 'read' ) ); ?>
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					<a href="<?php the_permalink(); ?>" class="category__item">
 						<span class="category__item--wrap">

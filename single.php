@@ -12,7 +12,6 @@
                     </div>
 <!--                    <h3>--><?php //the_title(); ?><!--</h3>-->
                 </div>
-
                 <?php
                 // retrieve all Attachments for the 'attachments' instance of post 123
                 $attachments = new Attachments('attachments', get_the_ID());

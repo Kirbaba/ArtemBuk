@@ -456,5 +456,235 @@ function getTrip(){
 
 /*----------------------------------------- КОНЕЦ ПУТЕШЕСТВИЙ --------------------------------------------------------*/
 
+/*--------------------------------------------- МАГАЗИН -----------------------------------------------------*/
+
+/*function my_attachments( $attachments )
+{
+    $fields         = array(
+        array(
+            'name'      => 'title',                         // unique field name
+            'type'      => 'text',                          // registered field type
+            'label'     => __( 'Title', 'attachments' ),    // label to display
+            'default'   => 'title',                         // default value upon selection
+        )
+    );
+
+    $args = array(
+
+        // title of the meta box (string)
+        'label'         => 'Прикрепленные изображения',
+
+        // all post types to utilize (string|array)
+        'post_type'     => array( 'mainpageblocks' ),
+
+        // meta box position (string) (normal, side or advanced)
+        'position'      => 'normal',
+
+        // meta box priority (string) (high, default, low, core)
+        'priority'      => 'high',
+
+        // allowed file type(s) (array) (image|video|text|audio|application)
+        'filetype'      => null,  // no filetype limit
+
+        // include a note within the meta box (string)
+        'note'          => 'прикрепите изображения здесь!',
+
+        // by default new Attachments will be appended to the list
+        // but you can have then prepend if you set this to false
+        'append'        => true,
+
+        // text for 'Attach' button in meta box (string)
+        'button_text'   => __( 'Добавить изображения', 'attachments' ),
+
+        // text for modal 'Attach' button (string)
+        'modal_text'    => __( 'Добавить', 'attachments' ),
+
+        // which tab should be the default in the modal (string) (browse|upload)
+        'router'        => 'browse',
+
+        // whether Attachments should set 'Uploaded to' (if not already set)
+        'post_parent'   => false,
+
+        // fields array
+        'fields'        => $fields,
+
+    );
+
+    $attachments->register( 'my_attachments', $args ); // unique instance name
+}
+
+add_action( 'attachments_register', 'my_attachments' );*/
+
+add_action('init', 'myCustomInitStore');
+
+function myCustomInitStore()
+{
+    $labels = array(
+        'name' => 'Магазин', // Основное название типа записи
+        'singular_name' => 'Магазин', // отдельное название записи типа Book
+        'add_new' => 'Добавить товар',
+        'add_new_item' => 'Добавить новый товар',
+        'edit_item' => 'Редактировать товар',
+        'new_item' => 'Новый товар',
+        'view_item' => 'Посмотреть товар',
+        'search_items' => 'Найти товар',
+        'not_found' => 'Товаров не найдено',
+        'not_found_in_trash' => 'В корзине товаров не найдено',
+        'parent_item_colon' => '',
+        'menu_name' => 'Магазин'
+
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array('title', 'thumbnail','editor','comments')
+    );
+    register_post_type('store', $args);
+}
+
+function extraFieldsStoreAuthor($post)
+{
+    ?>
+    <p>
+        <span>Автор: </span>
+        <input type="text" name='extra[author]' value="<?php echo get_post_meta($post->ID, "author", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsStorePrice($post)
+{
+    ?>
+    <p>
+        <span>Цена (только цифры): </span>
+        <input type="text" name='extra[price]' value="<?php echo get_post_meta($post->ID, "price", 1); ?>">
+    </p>
+    <?php
+}
+
+/*сслки на 50% книги*/
+function extraFieldsStoreLink50pdf($post)
+{
+    ?>
+    <p>
+        <span>Ссылка на 50% книги *.pdf: </span>
+        <input type="text" name='extra[link50pdf]' value="<?php echo get_post_meta($post->ID, "link50pdf", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsStoreLink50fb2($post)
+{
+    ?>
+    <p>
+        <span>Ссылка на 50% книги *.fb2: </span>
+        <input type="text" name='extra[link50fb2]' value="<?php echo get_post_meta($post->ID, "link50fb2", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsStoreLink50epub($post)
+{
+    ?>
+    <p>
+        <span>Ссылка на 50% книги *.epub: </span>
+        <input type="text" name='extra[link50epub]' value="<?php echo get_post_meta($post->ID, "link50epub", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsStoreLink50html($post)
+{
+    ?>
+    <p>
+        <span>Ссылка на 50% книги *.html: </span>
+        <input type="text" name='extra[link50html]' value="<?php echo get_post_meta($post->ID, "link50html", 1); ?>">
+    </p>
+    <?php
+}
+
+/* ссылки на 100% книги*/
+function extraFieldsStoreLink100html($post)
+{
+    ?>
+    <p>
+        <span>Ссылка на полную книгу *.html: </span>
+        <input type="text" name='extra[link100html]' value="<?php echo get_post_meta($post->ID, "link100html", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsStoreLink100pdf($post)
+{
+    ?>
+    <p>
+        <span>Ссылка на полную книгу *.pdf: </span>
+        <input type="text" name='extra[link100pdf]' value="<?php echo get_post_meta($post->ID, "link100pdf", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsStoreLink100fb2($post)
+{
+    ?>
+    <p>
+        <span>Ссылка на полную книгу *.fb2: </span>
+        <input type="text" name='extra[link100fb2]' value="<?php echo get_post_meta($post->ID, "link100fb2", 1); ?>">
+    </p>
+    <?php
+}
+
+function extraFieldsStoreLink100epub($post)
+{
+    ?>
+    <p>
+        <span>Ссылка на полную книгу *.epub: </span>
+        <input type="text" name='extra[link100epub]' value="<?php echo get_post_meta($post->ID, "link100epub", 1); ?>">
+    </p>
+    <?php
+}
+
+/*ссылка на 1ю главу книги*/
+function extraFieldsStoreLinkRead($post)
+{
+    ?>
+    <p>
+        <span>Ссылка на чтение: </span>
+        <input type="text" name='extra[linkread]' value="<?php echo get_post_meta($post->ID, "linkread", 1); ?>">
+    </p>
+    <?php
+}
+
+
+function myExtraFieldsStore()
+{
+    add_meta_box('extra_author', 'Автор', 'extraFieldsStoreAuthor', 'store', 'normal', 'high');
+    add_meta_box('extra_price', 'Цена', 'extraFieldsStorePrice', 'store', 'normal', 'high');
+    add_meta_box('extra_link50pdf', 'Ссылка на 50% книги *.pdf', 'extraFieldsStoreLink50pdf', 'store', 'normal', 'high');
+    add_meta_box('extra_link50fb2', 'Ссылка на 50% книги *.fb2', 'extraFieldsStoreLink50fb2', 'store', 'normal', 'high');
+    add_meta_box('extra_link50epub', 'Ссылка на 50% книги *.epub', 'extraFieldsStoreLink50epub', 'store', 'normal', 'high');
+    add_meta_box('extra_link50html', 'Ссылка на 50% книги *.html', 'extraFieldsStoreLink50html', 'store', 'normal', 'high');
+    add_meta_box('extra_link100pdf', 'Ссылка на полную книгу *.pdf', 'extraFieldsStoreLink100pdf', 'store', 'normal', 'high');
+    add_meta_box('extra_link100fb2', 'Ссылка на полную книгу *.fb2', 'extraFieldsStoreLink100fb2', 'store', 'normal', 'high');
+    add_meta_box('extra_link100epub', 'Ссылка на полную книгу *.epub', 'extraFieldsStoreLink100epub', 'store', 'normal', 'high');
+    add_meta_box('extra_link100html', 'Ссылка на полную книгу *.html', 'extraFieldsStoreLink100html', 'store', 'normal', 'high');
+    add_meta_box('extra_linkread', 'Ссылка чтение книги', 'extraFieldsStoreLinkRead', 'store', 'normal', 'high');
+}
+
+add_action('add_meta_boxes', 'myExtraFieldsStore', 1);
+
+
+
+/*------------------------------------------ КОНЕЦ МАГАЗИНА -------------------------------------------------*/
+
 
 

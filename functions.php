@@ -662,7 +662,7 @@ add_action('add_meta_boxes', 'myExtraFieldsStore', 1);
 
 function getProducts(){
     $args = array(
-        'category_name' => 'reviews',
+        'post_type' => 'store',
         'posts_per_page' => -1);
 
     $my_query = new WP_Query($args);

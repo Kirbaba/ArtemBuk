@@ -19,69 +19,15 @@
 		<div class="row">
 			<div class="page__wrapper">
 				<div class="page__head">
-					<h3>Купить книги</h3>
+					<div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+						<?php if(function_exists('bcn_display'))
+						{
+							bcn_display();
+						}?>
+					</div>
 				</div>
 				<div class="page__body page__body--wrap page__scrolltext read buyabook">
-					<!-- open .page-buyabook__row -->
-					<div class="buyabook__row">
-						<a href="#" class="buyabook__item">
-							<span class="buyabook__item--img">
-								<span>
-									<img src="http://artembuk.com/wp-content/uploads/2016/02/2.jpg" alt="" />
-								</span>
-								
-							</span>
-							<span class="buyabook__item--desc">
-								<p>Артем Бук</p>
-								<p>“Революция крови”</p>
-								<span class="buyabook__item--desc--price">250 руб</span>
-							</span>
-						</a>
-						<a href="#" class="buyabook__item">
-							<span class="buyabook__item--img">
-								<span>
-									<img src="http://artembuk.com/wp-content/uploads/2016/02/5.jpg" alt="" />
-								</span>
-								
-							</span>
-							<span class="buyabook__item--desc">
-								<p>Артем Бук</p>
-								<p>“Революция крови”</p>
-								<span class="buyabook__item--desc--price">250 руб</span>
-							</span>
-						</a>
-						<a href="#" class="buyabook__item">
-							<span class="buyabook__item--img">
-								<span>
-									<img src="http://artembuk.com/wp-content/uploads/2016/02/1.jpg" alt="" />
-								</span>								
-							</span>
-							<span class="buyabook__item--desc">
-								<p>Артем Бук</p>
-								<p>“Революция крови”</p>
-								<span class="buyabook__item--desc--price">250 руб</span>
-							</span>
-						</a>
-					</div>
-					<!-- close .page-buyabook__row -->
-					<!-- open .page-buyabook__row -->
-					<div class="buyabook__row">
-						<a href="#" class="buyabook__item">
-							<span class="buyabook__item--img--sub">
-								<img src="<?php bloginfo('template_directory'); ?>/img/adress-book.png" alt="" />
-								
-							</span>
-							<span class="buyabook__item--desc">
-								<p>Купить подписку</p>
-								<span class="buyabook__item--desc--price">10100 руб</span>
-							</span>
-						</a>
-					</div>
-					<!-- close .page-buyabook__row -->
-					<!-- open .page-buyabook__row -->
-					<div class="buyabook__row">
-						
-					</div>
+					<?php echo do_shortcode('[products]'); ?>
 					<!-- close .page-buyabook__row -->
 					<div class="preloader"></div>
 				</div>

@@ -592,6 +592,16 @@ function extraFieldsStoreLink50fb2($post)
     <?php
 }
 
+function extraFieldsStoreLink50rtf($post)
+{
+    ?>
+    <p>
+        <span>Ссылка на 50% книги *.rtf: </span>
+        <input type="text" name='extra[link50rtf]' value="<?php echo get_post_meta($post->ID, "link50rtf", 1); ?>">
+    </p>
+    <?php
+}
+
 function extraFieldsStoreLink50epub($post)
 {
     ?>
@@ -612,43 +622,12 @@ function extraFieldsStoreLink50html($post)
     <?php
 }
 
-/* ссылки на 100% книги*/
-function extraFieldsStoreLink100html($post)
+function extraFieldsStoreLinkZip($post)
 {
     ?>
     <p>
-        <span>Ссылка на полную книгу *.html: </span>
-        <input type="text" name='extra[link100html]' value="<?php echo get_post_meta($post->ID, "link100html", 1); ?>">
-    </p>
-    <?php
-}
-
-function extraFieldsStoreLink100pdf($post)
-{
-    ?>
-    <p>
-        <span>Ссылка на полную книгу *.pdf: </span>
-        <input type="text" name='extra[link100pdf]' value="<?php echo get_post_meta($post->ID, "link100pdf", 1); ?>">
-    </p>
-    <?php
-}
-
-function extraFieldsStoreLink100fb2($post)
-{
-    ?>
-    <p>
-        <span>Ссылка на полную книгу *.fb2: </span>
-        <input type="text" name='extra[link100fb2]' value="<?php echo get_post_meta($post->ID, "link100fb2", 1); ?>">
-    </p>
-    <?php
-}
-
-function extraFieldsStoreLink100epub($post)
-{
-    ?>
-    <p>
-        <span>Ссылка на полную книгу *.epub: </span>
-        <input type="text" name='extra[link100epub]' value="<?php echo get_post_meta($post->ID, "link100epub", 1); ?>">
+        <span>Ссылка на архив со всеми книгами: </span>
+        <input type="text" name='extra[linkzip]' value="<?php echo get_post_meta($post->ID, "linkzip", 1); ?>">
     </p>
     <?php
 }
@@ -671,18 +650,28 @@ function myExtraFieldsStore()
     add_meta_box('extra_price', 'Цена', 'extraFieldsStorePrice', 'store', 'normal', 'high');
     add_meta_box('extra_link50pdf', 'Ссылка на 50% книги *.pdf', 'extraFieldsStoreLink50pdf', 'store', 'normal', 'high');
     add_meta_box('extra_link50fb2', 'Ссылка на 50% книги *.fb2', 'extraFieldsStoreLink50fb2', 'store', 'normal', 'high');
+    add_meta_box('extra_link50rtf', 'Ссылка на 50% книги *.rtf', 'extraFieldsStoreLink50rtf', 'store', 'normal', 'high');
     add_meta_box('extra_link50epub', 'Ссылка на 50% книги *.epub', 'extraFieldsStoreLink50epub', 'store', 'normal', 'high');
     add_meta_box('extra_link50html', 'Ссылка на 50% книги *.html', 'extraFieldsStoreLink50html', 'store', 'normal', 'high');
-    add_meta_box('extra_link100pdf', 'Ссылка на полную книгу *.pdf', 'extraFieldsStoreLink100pdf', 'store', 'normal', 'high');
-    add_meta_box('extra_link100fb2', 'Ссылка на полную книгу *.fb2', 'extraFieldsStoreLink100fb2', 'store', 'normal', 'high');
-    add_meta_box('extra_link100epub', 'Ссылка на полную книгу *.epub', 'extraFieldsStoreLink100epub', 'store', 'normal', 'high');
-    add_meta_box('extra_link100html', 'Ссылка на полную книгу *.html', 'extraFieldsStoreLink100html', 'store', 'normal', 'high');
+    add_meta_box('extra_linkzip', 'Ссылка на архив со всеми доступными форматами полных книг', 'extraFieldsStoreLinkZip', 'store', 'normal', 'high');
     add_meta_box('extra_linkread', 'Ссылка чтение книги', 'extraFieldsStoreLinkRead', 'store', 'normal', 'high');
 }
 
 add_action('add_meta_boxes', 'myExtraFieldsStore', 1);
 
 
+function getProducts(){
+    $args = array(
+        'category_name' => 'reviews',
+        'posts_per_page' => -1);
+
+    $my_query = new WP_Query($args);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/views/products.php', ['my_query' => $my_query]);
+}
+
+add_shortcode('products','getProducts');
 
 /*------------------------------------------ КОНЕЦ МАГАЗИНА -------------------------------------------------*/
 

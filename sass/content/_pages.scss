@@ -230,3 +230,115 @@
 		font-size: 16px;
 	}
 }
+
+.buyabook {
+	&__row {
+		display: block;
+		float: left;
+		position: relative;
+		width: 100%;
+		height: 140px;
+		background-image: url('../img/Glass-board.png');
+		background-repeat: no-repeat;
+		background-position: 0 60%;
+		-webkit-background-size: contain;
+		     -o-background-size: contain;
+		        background-size: contain;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		padding: 0 60px;
+		margin-bottom: 15px;
+	}
+	&__item {
+		display: block;
+		float: left;
+		position: relative;
+		width: 1 / 3 * 100%;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		padding: 5px 20px;
+		@include transition(.3s);
+		&--img {
+			display: block;
+			margin: 0 auto;
+			width: 68px;
+			height: 83px;
+			background-image: url('../img/The_Cover.png');
+			background-repeat: no-repeat;
+			margin-bottom: 5px;
+		    padding: 0 8px 3px 0;
+		    &--sub {
+		    	display: block;
+				margin: 0 auto;
+				width: 90px;
+				margin-top: 5px;
+				img {
+					width: 100%;
+				}
+		    }
+			span {
+				display: block;
+				float: left;
+				width: 100%;
+				height: 100%;
+				 -moz-transform: scaleX(0.89) scaleY(0.96) rotateY(-1deg) rotateZ(1deg);
+				-moz-perspective: 150px;
+				-moz-perspective-origin: right center;
+
+				-webkit-perspective: 150px;
+				-webkit-perspective-origin: right center;
+				-webkit-transform-style: preserve-3d;
+				-webkit-transform: scaleX(0.89) scaleY(0.96) rotateY(-1deg) rotateZ(1deg);
+
+				-o-perspective: 150px;
+				-o-perspective-origin: right center;
+				-o-transform-style: preserve-3d;
+				-o-transform: scaleX(0.89) scaleY(0.96) rotateY(-1deg) rotateZ(1deg);
+
+				-ms-perspective: 150px;
+				-ms-perspective-origin: right center;
+				-ms-transform-style: preserve-3d; 
+				-ms-transform: scaleX(0.89) scaleY(0.96) rotateY(-1deg) rotateZ(1deg);   
+
+				perspective: 68px;
+				perspective-origin: right center;
+				transform-style: preserve-3d;
+				transform: scaleX(0.89) scaleY(0.96) rotateY(-1deg) rotateZ(1deg);
+				overflow: hidden;
+			}
+			img {
+				width: 100%;	
+				position: absolute;
+				-moz-transform: rotateY(2deg) translateZ(-25px);
+			    -webkit-transform: rotateY(2deg) translateZ(-25px);
+			    -o-transform: rotateY(2deg) translateZ(-25px);
+			    -ms-transform: rotateY(2deg) translateZ(-25px);
+			    transform: rotateY(2deg) translateZ(-25px);			
+			}
+		}
+		&--desc {
+			display: block;
+			float: left;
+			width: 100%;
+			text-align: center;
+			color: #FFF;
+			font-size: 11px;
+			margin-top: 10px;
+			p {
+				margin: 0;
+			}
+			&--price {
+				color: #FFF600;
+			}
+		}
+		&:hover, &:focus {
+			.buyabook__item--desc {
+				p {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}

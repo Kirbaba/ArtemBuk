@@ -141,3 +141,13 @@ p#bookmark{
   -moz-transform: rotateY(20deg);
   -webkit-transform: perspective(100) rotateY(20deg);
 }
+
+.ornament-top {
+	display: block;
+	position: relative;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	height: 50px;
+	width: 100%;
+	background-image: url('../img/ornament-top.png');
+}

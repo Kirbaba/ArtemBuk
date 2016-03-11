@@ -1,4 +1,4 @@
-<h4 class="storepage-single--title">Комментарии</h4>
+    <h4 class="storepage-single--title">Комментарии</h4>
 <article class="page__scrolltext storepage-single--annotation">
     <!-- форма ввода комментария -->
 

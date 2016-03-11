@@ -673,7 +673,40 @@ function getProducts(){
 
 add_shortcode('products','getProducts');
 
+function generateNumber($length = 5){
+    $chars = '0123456789';
+    $numChars = strlen($chars);
+    $string = '';
+    for ($i = 0; $i < $length; $i++) {
+        $string .= substr($chars, rand(1, $numChars) - 1, 1);
+    }
+    return $string;
+}
+
+add_action( 'admin_post_add_order', 'admin_add_order' );
+add_action( 'admin_post_nopriv_add_order', 'admin_add_order' );
+
+function admin_add_order() {
+    global $wpdb;
+
+    $order_num = generateNumber();
+    $product_id = $_POST['buybook--id'];
+    $product_price = $_POST['buybook--sum'];
+    $email = $_POST['buybook--mail'];
+
+    if(
+    $wpdb->insert('orders',array(
+        'order_num' => $order_num,
+        'book_id' => $product_id,
+        'price' => $product_price,
+        'email' => $email,
+        'status' => 0
+    ))){
+        // Handle request then generate response using echo or leaving PHP and using HTML
+        header("HTTP/1.1 301 Moved Permanently");
+        header("Location: ".get_bloginfo('url')."/order/?sum=".$product_price."&n=".$order_num);
+        exit();
+    }
+}
+
 /*------------------------------------------ КОНЕЦ МАГАЗИНА -------------------------------------------------*/
-
-
-

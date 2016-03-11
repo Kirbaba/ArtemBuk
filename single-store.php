@@ -57,7 +57,7 @@
                                 <?php endif; ?>
                             </div>
                             <!-- close .controls--format -->
-                            <a href="#" class="controls--buy" data-id="<?php echo get_the_ID(); ?>"><b><i>Купить книгу<sup>за <?php echo get_post_meta(get_the_ID(), "price", 1); ?> рублей</sup></i></b></a>
+                            <a href="/buybook/?id=<?php echo get_the_ID(); ?>&sum=<?php echo get_post_meta(get_the_ID(), "price", 1); ?>" class="controls--buy" ><b><i>Купить книгу<sup>за <?php echo get_post_meta(get_the_ID(), "price", 1); ?> рублей</sup></i></b></a>
                         </div>
                         <!-- close .storepage-single__head--controls -->
 

@@ -63,6 +63,13 @@
 			line-height: normal;
 			margin: 0;
 		}
+		h4 {
+			text-align: center;
+			font-size: 18px;
+			font-weight: bold;line-height: normal;
+			margin: 0;
+			color: #FFF;
+		}
 	}
 	&--bookmark{
 		float: right;
@@ -600,13 +607,108 @@
 			@include transition(.3s);
 			font-weight: bold;
 			font-style: italic;
-			sup {
-				margin-left: 10px;
-			}
 			&:focus, &:hover {
 				@include box-shadow(inset 0 0 0 3px rgba(255,255,255,.5));
 			}			
 			
+		}
+	}
+}
+
+.subchoice {
+	&__wrap {
+		display: block;
+		width: 100%;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		padding: 0 50px;
+	}
+	&__item {
+		display: block;
+		float: left;
+		width: 50%;
+		height: 250px;
+		margin: 15px 0;
+		text-align: center;
+		&--btn {
+			display: inline-block;
+			width: 65%;
+			color: #FFF;
+			height: 44px;
+			margin: 15px 0;
+			line-height: 34px;
+			text-align: center;
+			font-size: 18px;
+			@include text-shadow(1px 0 1px rgba(0,0,0,.71));
+			@include border-radius(8px);
+			@include background-clip(padding-box);
+			border: 1px solid #f13d3d;
+			background-color: #4377b7;
+			@include box-shadow(inset 0 0 0 1px rgba(255,255,255,.3));
+			@include background-image(linear-gradient(bottom, #a80c0c 0%, #f23c3c 100%));
+			text-decoration: none;
+			@include transition(.3s);
+			font-weight: bold;
+			font-style: italic;
+			text-decoration: none;
+			&:focus, &:hover {
+				@include box-shadow(inset 0 0 0 3px rgba(255,255,255,.5));
+				color: #FFF;
+				text-decoration: none;
+			}			
+			.yellow {
+				color: yellow;
+				font-size: 24px;	
+			}
+		}
+		&--month {
+			display: block;
+			margin: 0 auto;
+			.month--green {
+				display: block;
+				margin: 0 auto;
+				width: 115px;
+				height: 135px;
+				background-repeat: no-repeat;
+				background-image: url('../img/sub_12.png');
+				background-position: 50% 50%;
+				-webkit-background-size: 100%;
+				background-size: 100%;
+				h2 {
+					color: #fff;
+					text-align: center;
+					line-height: 130px;
+					margin: 0;
+					font-size: 50px;
+					font-weight: 900;
+				}
+			}
+			.month--blue {
+				display: block;
+				margin: 0 auto;
+				width: 115px;
+				height: 135px;
+				background-repeat: no-repeat;
+				background-image: url('../img/sub_6.png');
+				background-position: 50% 50%;
+				-webkit-background-size: 100%;
+				background-size: 100%;
+				h2 {
+					color: #fff;
+					text-align: center;
+					line-height: 130px;
+					margin: 0;
+					font-size: 50px;
+					font-weight: 900;
+				}
+			}
+			h4 {
+				font-size: 18px;
+				color: #FFF;
+				font-weight: 900;
+				margin: 0;
+			}
 		}
 	}
 }

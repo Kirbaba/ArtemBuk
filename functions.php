@@ -690,23 +690,78 @@ function admin_add_order() {
     global $wpdb;
 
     $order_num = generateNumber();
-    $product_id = $_POST['buybook--id'];
-    $product_price = $_POST['buybook--sum'];
-    $email = $_POST['buybook--mail'];
 
-    if(
-    $wpdb->insert('orders',array(
-        'order_num' => $order_num,
-        'book_id' => $product_id,
-        'price' => $product_price,
-        'email' => $email,
-        'status' => 0
-    ))){
+    if($_POST['subscription-duration']){
+        $month = $_POST['subscription-duration'];
+        $price = $_POST['subscription-price'];
+        //$end_date = strtotime('+'.$month.' month', time());
+        $user = $_POST['subscription-user_id'];
+
+        add_user_meta( $user, 'subscription_duration', 0, true );
+        add_user_meta( $user, 'subscription_order_num', $order_num, true );
         // Handle request then generate response using echo or leaving PHP and using HTML
         header("HTTP/1.1 301 Moved Permanently");
-        header("Location: ".get_bloginfo('url')."/order/?sum=".$product_price."&n=".$order_num);
+        header("Location: ".get_bloginfo('url')."/order/?sum=".$price."&uid=".$user."&dur=".$month."&n=".$order_num);
         exit();
+    }else{
+        $product_id = $_POST['buybook--id'];
+        $product_price = $_POST['buybook--sum'];
+        $email = $_POST['buybook--mail'];
+
+        if(
+        $wpdb->insert('orders',array(
+            'order_num' => $order_num,
+            'book_id' => $product_id,
+            'price' => $product_price,
+            'email' => $email,
+            'status' => 0
+        ))){
+            // Handle request then generate response using echo or leaving PHP and using HTML
+            header("HTTP/1.1 301 Moved Permanently");
+            header("Location: ".get_bloginfo('url')."/order/?sum=".$product_price."&n=".$order_num);
+            exit();
+        }
     }
+
 }
 
+function set_order_status($order,$shp_item){
+    global $wpdb;
+
+    if($shp_item == 1){
+        $wpdb->update('orders',array(
+            'status' => 1,
+        ),array(
+            'order_num' => $order,
+        ));
+
+        $order = $wpdb->get_results('SELECT * FROM `orders` WHERE order_num = '.$order,ARRAY_A);
+        $book = get_post($order[0]['book_id']);
+
+        //prn($order);
+        //prn($book);
+
+        $str = 'Ваш заказ: '.$book->post_title.' <br>';
+        $str .= 'Ссылка на скачку: '.get_post_meta($book->ID, "linkzip", 1).' <br>';
+
+        mail($order[0]['email'], "Письмо с сайта Артема Бука", $str, "Content-type: text/html; charset=UTF-8\r\n");
+    }else{
+
+        $user = reset(
+            get_users(
+                array(
+                    'meta_key' => 'subscription_order_num',
+                    'meta_value' => $order,
+                    'number' => 1,
+                    'count_total' => false
+                )
+            )
+        );
+
+        add_user_meta( $user, 'subscription_duration', strtotime('+'.$shp_item.' month', time()), true );
+       // add_user_meta( $user, 'subscription_order_num', $order_num, true );
+        //mail($order[0]['email'], "Письмо с сайта Артема Бука", $str, "Content-type: text/html; charset=UTF-8\r\n");
+    }
+
+}
 /*------------------------------------------ КОНЕЦ МАГАЗИНА -------------------------------------------------*/

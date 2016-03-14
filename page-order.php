@@ -1,9 +1,11 @@
 <? get_header();
-
 // регистрационная информация (логин, пароль #1)
 // registration info (login, password #1)
-$mrh_login = "lic";
-$mrh_pass1 = "123qwerty";
+$mrh_login = "Worlds_by_Artem_Buk";
+$mrh_pass1 = "dC78KA4WbmegMcHl89Fr";
+$mrh_pass2 = "Ax1eW98LMW9f2LNfTnSL";
+$mrh_test_pass1 = "123qwerty";
+$mrh_test_pass2 = "XvkgG92wjKcV444QMbWN";
 
 // номер заказа
 // number of order
@@ -19,7 +21,12 @@ $out_summ = $_GET['sum'];
 
 // тип товара
 // code of goods
-$shp_item = 1;
+if($_GET['dur']){
+	$shp_item = $_GET['dur'];
+}else{
+	$shp_item = 1;
+}
+
 
 // язык
 // language
@@ -31,11 +38,9 @@ $encoding = "utf-8";
 
 // формирование подписи
 // generate signature
-$crc  = md5("$mrh_login:$out_summ:$inv_id:$mrh_pass1:shp_Item=$shp_item");
+$crc  = md5("$mrh_login:$out_summ:$inv_id:$mrh_test_pass1:shp_Item=$shp_item");
 
 // HTML-страница с кассой
-// ROBOKASSA HTML-pag
-
 ?>
 	<div class="col-xs-12">
 		<div class="page__wrapper">

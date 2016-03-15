@@ -1,8 +1,8 @@
 <? get_header();
 
 $inv_id = $_GET['inv_id'];
-$shp_item = $_GET['shp_item'];
-
+$shp_item = $_GET['shp_Item'];
+//prn($shp_item);
 set_order_status($inv_id,$shp_item);
 
 ?>

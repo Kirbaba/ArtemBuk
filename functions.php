@@ -697,8 +697,15 @@ function admin_add_order() {
         //$end_date = strtotime('+'.$month.' month', time());
         $user = $_POST['subscription-user_id'];
 
-        add_user_meta( $user, 'subscription_duration', 0, true );
-        add_user_meta( $user, 'subscription_order_num', $order_num, true );
+        if(!get_user_meta($user,'subscription_duration')){
+            add_user_meta( $user, 'subscription_duration', 0, true );
+        }
+        if(!get_user_meta($user,$order_num)){
+            add_user_meta( $user,$order_num, 0, true );
+        }else{
+            update_user_meta( $user, $order_num, 0 );
+        }
+
         // Handle request then generate response using echo or leaving PHP and using HTML
         header("HTTP/1.1 301 Moved Permanently");
         header("Location: ".get_bloginfo('url')."/order/?sum=".$price."&uid=".$user."&dur=".$month."&n=".$order_num);
@@ -746,22 +753,34 @@ function set_order_status($order,$shp_item){
 
         mail($order[0]['email'], "Письмо с сайта Артема Бука", $str, "Content-type: text/html; charset=UTF-8\r\n");
     }else{
-
-        $user = reset(
-            get_users(
-                array(
-                    'meta_key' => 'subscription_order_num',
-                    'meta_value' => $order,
-                    'number' => 1,
-                    'count_total' => false
-                )
-            )
+        $args = array(
+            'meta_key'     => $order,
+            'meta_value'   => 0,
         );
+        $user = get_users( $args );
 
-        add_user_meta( $user, 'subscription_duration', strtotime('+'.$shp_item.' month', time()), true );
-       // add_user_meta( $user, 'subscription_order_num', $order_num, true );
-        //mail($order[0]['email'], "Письмо с сайта Артема Бука", $str, "Content-type: text/html; charset=UTF-8\r\n");
+        //prn($user[0]->ID);
+        $curr_dur = get_user_meta($user[0]->ID,'subscription_duration');
+
+        if($curr_dur[0] == '0'){
+            //set status to close
+            //update duration value
+            $new_dur = strtotime('+'.$shp_item.' month', time());
+            update_user_meta( $user[0]->ID, 'subscription_duration', $new_dur);
+            update_user_meta( $user[0]->ID, $order, 1);
+            //print data
+           // $neew = get_user_meta($user[0]->ID,'subscription_duration');
+            //prn(date("m.d.y", $neew[0]));
+        }else{
+            //set status to close
+            //update duration value
+            $new_dur = strtotime('+'.$shp_item.' month', $curr_dur[0]);
+            update_user_meta( $user[0]->ID, 'subscription_duration', $new_dur);
+            update_user_meta( $user[0]->ID, $order, 1);
+            //print data
+            //$neew = get_user_meta($user[0]->ID,'subscription_duration');
+           // prn(date("m.d.y", $neew[0]));
+        }
     }
-
 }
 /*------------------------------------------ КОНЕЦ МАГАЗИНА -------------------------------------------------*/

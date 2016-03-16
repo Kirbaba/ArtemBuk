@@ -742,16 +742,10 @@ function set_order_status($order,$shp_item){
             'order_num' => $order,
         ));
 
-        $order = $wpdb->get_results('SELECT * FROM `orders` WHERE order_num = '.$order,ARRAY_A);
-        $book = get_post($order[0]['book_id']);
+        $order_data = $wpdb->get_results('SELECT * FROM `orders` WHERE order_num = '.$order,ARRAY_A);
+        $book = get_post($order_data[0]['book_id']);
 
-        //prn($order);
-        //prn($book);
-
-        $str = 'Ваш заказ: '.$book->post_title.' <br>';
-        $str .= 'Ссылка на скачку: '.get_post_meta($book->ID, "linkzip", 1).' <br>';
-
-        mail($order[0]['email'], "Письмо с сайта Артема Бука", $str, "Content-type: text/html; charset=UTF-8\r\n");
+        send_book($order_data,$book);
     }else{
         $args = array(
             'meta_key'     => $order,
@@ -782,5 +776,71 @@ function set_order_status($order,$shp_item){
            // prn(date("m.d.y", $neew[0]));
         }
     }
+}
+
+function send_book($order,$book){
+    $book_link = get_post_meta($order[0]['book_id'],'linkzip',1);
+    $mail = $order[0]['email'];
+
+    $format = explode('.',$book_link);
+    $last = $format[count($format)-1];
+
+    $new_file = "wp-content/uploads/temp.".$last;
+
+    if(copy($book_link,$new_file)){
+        $data = open_attachment($new_file);
+    }
+
+    //$book_link = $_SERVER['DOCUMENT_ROOT'].'/wp-content/uploads/2016/02/614.jpg';
+    $str = 'Ваш заказ: '.$book->post_title.' <br>';
+    $str .= 'Ссылка на скачку: '.$book_link.' <br>';
+
+    $name = "book.".$last; // в этой переменной надо сформировать имя файла (без всякого пути)
+    $EOL = "\r\n"; // ограничитель строк, некоторые почтовые сервера требуют \n - подобрать опытным путём
+    $boundary     = "--".md5(uniqid(time()));  // любая строка, которой не будет ниже в потоке данных.
+    $headers    = "MIME-Version: 1.0;$EOL";
+    $headers   .= "Content-Type: multipart/mixed; boundary=\"$boundary\"$EOL";
+    $headers   .= "From: address@server.com";
+
+    $multipart  = "--$boundary$EOL";
+    $multipart .= "Content-Type: text/html; charset=UTF-8$EOL";
+    $multipart .= "Content-Transfer-Encoding: base64$EOL";
+    $multipart .= $EOL; // раздел между заголовками и телом html-части
+    $multipart .= chunk_split(base64_encode($str));
+
+    $multipart .=  "$EOL--$boundary$EOL";
+    $multipart .= "Content-Type: application/octet-stream; name=\"$name\"$EOL";
+    $multipart .= "Content-Transfer-Encoding: base64$EOL";
+    $multipart .= "Content-Disposition: attachment; filename=\"$name\"$EOL";
+    $multipart .= $EOL; // раздел между заголовками и телом прикрепленного файла
+    $multipart .= $data;
+
+    $multipart .= "$EOL--$boundary--$EOL";
+
+    unlink($new_file);
+    if(!mail($mail, 'Письмо с сайта Артема Бука', $multipart, $headers))
+    {
+        return False;           //если не письмо не отправлено
+    }
+    else { //// если письмо отправлено
+        return True;
+
+    }
+}
+
+function open_attachment($new_file){
+
+    $file = fopen($new_file,'r+');
+
+    // Read the file content into a variable
+    $flsz=filesize($new_file);
+    //prn($flsz);
+    $data = fread($file,$flsz);
+    // close the file
+    fclose($file);
+    // Now we need to encode it and split it into acceptable length lines
+    $data = chunk_split(base64_encode($data));
+
+    return $data;
 }
 /*------------------------------------------ КОНЕЦ МАГАЗИНА -------------------------------------------------*/

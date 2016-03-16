@@ -36,7 +36,7 @@
                 </span>
                 <span class="buyabook__item--desc">
                     <p>Купить подписку</p>
-                    <span class="buyabook__item--desc--price">10100 руб</span>
+                    <span class="buyabook__item--desc--price">300 руб</span>
                 </span>
             </a></div>';
     }else{
@@ -47,7 +47,7 @@
                     </span>
                     <span class="buyabook__item--desc">
                         <p>Купить подписку</p>
-                        <span class="buyabook__item--desc--price">10100 руб</span>
+                        <span class="buyabook__item--desc--price">300 руб</span>
                     </span>
                 </a></div>';
     }

@@ -317,7 +317,8 @@
 				overflow: hidden;
 			}
 			img {
-				width: 100%;	
+				width: 100%;
+				height: auto;	
 				position: absolute;
 				-moz-transform: rotateY(2deg) translateZ(-25px);
 			    -webkit-transform: rotateY(2deg) translateZ(-25px);

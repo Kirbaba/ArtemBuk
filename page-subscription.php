@@ -6,7 +6,7 @@
 			<!-- open .page-subscription--left -->
 			<div class="page-subscription--left">
 				<img src="<?php bloginfo('template_directory'); ?>/img/adress-book-1.png" alt="" />
-				<a href="#">Купить подписку</a>
+				<a href="/subchoice">Купить подписку</a>
 			</div>
 			<!-- close .page-subscription--left -->
 		</div>

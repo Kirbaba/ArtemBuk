@@ -33,14 +33,31 @@
                             <!-- open .controls--format -->
                             <div class="controls--format">
                                 <b><i>Скачать 50% книги</i></b>
-                                <a href="<?php echo get_post_meta(get_the_ID(), "link50pdf", 1); ?>">pdf</a>
-                                <a href="<?php echo get_post_meta(get_the_ID(), "link50fb2", 1); ?>">fb2</a>
-                                <a href="<?php echo get_post_meta(get_the_ID(), "link50epub", 1); ?>">epub</a>
-                                <a href="<?php echo get_post_meta(get_the_ID(), "link50rtf", 1); ?>">rtf</a>
-                                <a href="<?php echo get_post_meta(get_the_ID(), "link50html", 1); ?>">html</a>
+                                <?php  if ( get_post_meta(get_the_ID(), "link50pdf", 1) ) : ?>
+                                    <a href="<?php echo get_post_meta(get_the_ID(), "link50pdf", 1); ?>">pdf</a>
+                                <?php endif; ?>
+                                <?php  if ( get_post_meta(get_the_ID(), "link50fb2", 1) ) : ?>
+                                    <a href="<?php echo get_post_meta(get_the_ID(), "link50fb2", 1); ?>">fb2</a>
+                                <?php endif; ?>
+                                <?php  if ( get_post_meta(get_the_ID(), "link50epub", 1) ) : ?>
+                                    <a href="<?php echo get_post_meta(get_the_ID(), "link50epub", 1); ?>">epub</a>
+                                <?php endif; ?>
+                                <?php  if ( get_post_meta(get_the_ID(), "link50rtf", 1) ) : ?>
+                                    <a href="<?php echo get_post_meta(get_the_ID(), "link50rtf", 1); ?>">rtf</a>
+                                <?php endif; ?>
+                                <?php  if ( get_post_meta(get_the_ID(), "link50html", 1) ) : ?>
+                                    <a href="<?php echo get_post_meta(get_the_ID(), "link50html", 1); ?>">html</a>
+                                <?php endif; ?>
+                            </div>
+
+                            <div class="controls--format">
+                                <b><i>Скачать всю книгу полностью</i></b>
+                                <?php  if ( get_post_meta(get_the_ID(), "linkzip", 1) ) : ?>
+                                    <a href="<?php echo get_post_meta(get_the_ID(), "linkzip", 1); ?>">*.zip</a>
+                                <?php endif; ?>
                             </div>
                             <!-- close .controls--format -->
-                            <a href="#" class="controls--buy" data-id="<?php echo get_the_ID(); ?>"><b><i>Купить книгу<sup>за <?php echo get_post_meta(get_the_ID(), "price", 1); ?> рублей</sup></i></b></a>
+                            <a href="/buybook/?id=<?php echo get_the_ID(); ?>&sum=<?php echo get_post_meta(get_the_ID(), "price", 1); ?>" class="controls--buy" ><b><i>Купить книгу<sup>за <?php echo get_post_meta(get_the_ID(), "price", 1); ?> рублей</sup></i></b></a>
                         </div>
                         <!-- close .storepage-single__head--controls -->
 

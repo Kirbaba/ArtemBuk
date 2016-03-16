@@ -1,5 +1,4 @@
 ﻿<? get_header() ?>
-
 	<div class="col-xs-4 col-xs-push-8">
 		<div class="welcome">
 			<div class="welcome__head">

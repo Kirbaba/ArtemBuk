@@ -29,7 +29,7 @@
         //prn($new_line);
     endwhile;
     if($new_line % 3 != 0){
-        echo '<a href="#" class="buyabook__item">
+        echo '<a href="/subscription" class="buyabook__item">
                 <span class="buyabook__item--img--sub">
                     <img src="'.get_bloginfo('template_directory').'/img/adress-book.png" alt="" />
 
@@ -40,7 +40,7 @@
                 </span>
             </a></div>';
     }else{
-        echo '<div class="buyabook__row"><a href="#" class="buyabook__item">
+        echo '<div class="buyabook__row"><a href="/subscription" class="buyabook__item">
                     <span class="buyabook__item--img--sub">
                         <img src="'.get_bloginfo('template_directory').'/img/adress-book.png" alt="" />
 

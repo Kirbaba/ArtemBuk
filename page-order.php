@@ -19,6 +19,14 @@ $inv_desc = "Оплата заказа №$inv_id";
 // sum of order
 $out_summ = $_GET['sum'];
 
+$url = 'https://auth.robokassa.ru/Merchant/WebService/Service.asmx/CalcOutSumm?MerchantLogin='.$mrh_login.'&IncCurrLabel=YandexMerchantRIBR&IncSum='.$out_summ;
+$xml = file_get_contents($url);
+$feed = simplexml_load_string($xml);
+
+if($feed->OutSum){
+	$out_summ = $feed->OutSum;
+}
+
 // тип товара
 // code of goods
 if($_GET['dur']){
@@ -39,6 +47,7 @@ $encoding = "utf-8";
 // формирование подписи
 // generate signature
 $crc  = md5("$mrh_login:$out_summ:$inv_id:$mrh_test_pass1:shp_Item=$shp_item");
+
 
 // HTML-страница с кассой
 ?>
@@ -63,6 +72,13 @@ $crc  = md5("$mrh_login:$out_summ:$inv_id:$mrh_test_pass1:shp_Item=$shp_item");
 								"MerchantLogin=$mrh_login&OutSum=$out_summ&InvoiceID=$inv_id".
 								"&Description=$inv_desc&SignatureValue=$crc&shp_Item=$shp_item".
 								"&Culture=$culture&Encoding=$encoding&IsTest=1'></script></html>";
+							?>
+							<?php
+							print "<html><script language=JavaScript src='https://auth.robokassa.ru/Merchant/WebService/Service.asmx/GetCurrencies?MerchantLogin=$mrh_login&Language=ru'></script></html>";
+							?>
+
+							<?php
+							print "<html><script language=JavaScript src='https://auth.robokassa.ru/Merchant/WebService/Service.asmx/CalcOutSumm?MerchantLogin=$mrh_login&IncCurrLabel=YandexMerchantRIBR&IncSum=$out_summ'></script></html>";
 							?>
 						</div>
 						<!-- close .enter -->

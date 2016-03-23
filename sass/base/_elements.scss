@@ -20,6 +20,15 @@ span.separator{
 	color: #6a27ce!important;
 	position: absolute;
 	right: 15px;
+	span{
+		font-size: 12px;
+		display: block;
+		margin-right: 5px;
+	}
+	i{
+		float: right;
+		margin-right: 5px;
+	}
 }
 
 p#bookmark{
@@ -115,6 +124,7 @@ p#bookmark{
 .csstransforms3d  .book img {
   position: relative;
   max-width: 100%;
+	height: auto;
 }
 
 .csstransforms3d  .book:before,

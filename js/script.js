@@ -81,7 +81,7 @@ jQuery(document).ready( function(){
 
 jQuery(function($) {
     $('.mainpage-block').each( function(){
-
+        var rnd = Math.random() * (5000 - 3000) + 3000;
         var id = $(this).attr('data-id');
         //console.log(id);
         var images = [];
@@ -93,9 +93,9 @@ jQuery(function($) {
 
         //console.log(images);
         $(this).vegas({
-            delay: 5000,
+            delay: rnd,
             timer: false,
-            transitionDuration: 2000,
+            transitionDuration: 4000,
             slides: images
         });
     });

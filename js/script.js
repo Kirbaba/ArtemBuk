@@ -108,4 +108,11 @@ jQuery(function($){
         $('.js-trip-modal').html('');
     })
 });
+jQuery(function($){
+    var hash = window.location.hash;
+    if (hash != "")
+        $('#tabs a[href="' + hash + '"]').tab('show');
+    else
+        $('#tabs a:first').tab('show');
+});
 

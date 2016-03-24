@@ -1,4 +1,9 @@
 <? get_header() ?>
+<?php $current_user = wp_get_current_user(); ?>
+<?php $info = get_userdata($current_user->ID); ?>
+<?php $meta = get_user_meta($current_user->ID); ?>
+<?php /*prn($meta);*/ ?>
+<?php /*prn($info);*/ ?>
 	<!-- open .col-xs-3 -->
 	<div class="col-xs-3">
 		<!-- open .page__wrapper -->
@@ -9,7 +14,7 @@
 			<!-- open .page__scrolltext -->
 			<div class="page__scrolltext page-cabinet--aside">
 				 <!-- Nav tabs -->
-				<ul class="nav nav-tabs" role="tablist">
+				<ul id="tabs" class="nav nav-tabs" role="tablist">
 					<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Профиль</a></li>
 					<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Подписки</a></li>
 					<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Заказы</a></li>
@@ -40,14 +45,14 @@
 		<!-- open .page-cabinet__content--welcome -->
 		<div class="page-cabinet__content--welcome">
 			<p>Добро пожаловать, 
-				<span class="name">Roma887</span>
-				<span class="last">Последний вход: <i>Сегодня 10:36</i></span>
+				<span class="name"><?php echo $info->data->display_name; ?></span>
+				<span class="last">Последний вход: <i><?php echo new_time(strtotime(get_last_login($current_user->ID))); ?></i></span>
 			</p>
 
 		</div>
 		<!-- close .page-cabinet__content--welcome -->
 		<div class="page__scrolltext page-cabinet__content--wrap">
-			<div class="tab-content">
+			<div id="tabs-content" class="tab-content">
 			    <div role="tabpanel" class="tab-pane active" id="home">
 					<div class="page__head">
 						<h3>Профиль <a href="#" class="edit">Редактировать</a></h3>
@@ -56,16 +61,42 @@
 					<div class="page-cabinet__content--box">
 						<!-- open .page-cabinet--avatar -->
 						<div class="page-cabinet--avatar">
-							
+							<img src="<?php echo get_wp_user_avatar_src($current_user->ID); ?>" alt="">
 						</div>
 						<!-- open .page-cabinet--information -->
 						<div class="page-cabinet--information">
-							<p>Проживание: <span>Москва</span></p>
-							<p>Пол: <span>Не указан</span></p>
-							<p>Дата рождения: <span>Не указана</span></p>
-							<p>Зарегистрирован: <span>21 марта 2016</span></p>
-							<p>Последний визит: <span>сегодня</span></p>
-							<p>Просмотр профиля: <span>0</span></p>
+
+
+							<p>Проживание: <span>
+									<?php
+									if(isset($meta['living_place'][0]) && !empty($meta['living_place'][0])){
+										echo $meta['living_place'][0];
+									}else{
+										echo "не указанно";
+									}
+									?>
+								</span></p>
+							<p>Пол: <span><?php
+									if(isset($meta['gender'][0]) && !empty($meta['gender'][0])){
+										echo $meta['gender'][0];
+									}else{
+										echo "не указан";
+									}
+									?></span></p>
+							<p>Дата рождения: <span>
+									<?php
+									if(isset($meta['bday'][0]) && !empty($meta['bday'][0])){
+										echo $meta['bday'][0];
+									}else{
+										echo "не указана";
+									}
+									?>
+								</span></p>
+
+							<p>Зарегистрирован: <span><?php $newDate = rus_date("j F Y", strtotime($info->data->user_registered)); echo $newDate;  ?></span></p>
+							<p>Статус подписки: <span>
+									<?php echo get_subscription_end($current_user->ID); ?>
+								</span></p>
 						</div>
 						<!-- close .page-cabinet--information -->
 						<!-- close .page-cabinet--avatar -->

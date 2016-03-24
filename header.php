@@ -45,8 +45,8 @@
                     </div>
                 </div>
                 <div class="header--entered--links">
-                    <a href="/wp-admin/profile.php">Личный кабинет</a>
-                    <a href="#">Личные сообщения</a>
+                    <a href="/cabinet/#home">Личный кабинет</a>
+                    <a href="/cabinet/#messages">Личные сообщения</a>
                     <a href="#">Заказы</a>
                     <a href="#">Корзина</a>
                     <a href="<?php echo wp_logout_url( home_url() ); ?>">Выход</a>

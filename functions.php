@@ -844,3 +844,130 @@ function open_attachment($new_file){
     return $data;
 }
 /*------------------------------------------ КОНЕЦ МАГАЗИНА -------------------------------------------------*/
+
+/*------------------------------------------------------CABINET-------------------------------------------------------*/
+
+function rus_date() {
+// Перевод
+    $translate = array(
+        "am" => "дп",
+        "pm" => "пп",
+        "AM" => "ДП",
+        "PM" => "ПП",
+        "Monday" => "Понедельник",
+        "Mon" => "Пн",
+        "Tuesday" => "Вторник",
+        "Tue" => "Вт",
+        "Wednesday" => "Среда",
+        "Wed" => "Ср",
+        "Thursday" => "Четверг",
+        "Thu" => "Чт",
+        "Friday" => "Пятница",
+        "Fri" => "Пт",
+        "Saturday" => "Суббота",
+        "Sat" => "Сб",
+        "Sunday" => "Воскресенье",
+        "Sun" => "Вс",
+        "January" => "Января",
+        "Jan" => "Янв",
+        "February" => "Февраля",
+        "Feb" => "Фев",
+        "March" => "Марта",
+        "Mar" => "Мар",
+        "April" => "Апреля",
+        "Apr" => "Апр",
+        "May" => "Мая",
+        "May" => "Мая",
+        "June" => "Июня",
+        "Jun" => "Июн",
+        "July" => "Июля",
+        "Jul" => "Июл",
+        "August" => "Августа",
+        "Aug" => "Авг",
+        "September" => "Сентября",
+        "Sep" => "Сен",
+        "October" => "Октября",
+        "Oct" => "Окт",
+        "November" => "Ноября",
+        "Nov" => "Ноя",
+        "December" => "Декабря",
+        "Dec" => "Дек",
+        "st" => "ое",
+        "nd" => "ое",
+        "rd" => "е",
+        "th" => "ое"
+    );
+    // если передали дату, то переводим ее
+    if (func_num_args() > 1) {
+        $timestamp = func_get_arg(1);
+        return strtr(date(func_get_arg(0), $timestamp), $translate);
+    } else {
+// иначе текущую дату
+        return strtr(date(func_get_arg(0)), $translate);
+    }
+}
+
+//associating a function to login hook
+add_action('wp_login', 'set_last_login');
+
+//function for setting the last login
+function set_last_login($login) {
+    $user = get_userdatabylogin($login);
+
+    //add or update the last login value for logged in user
+    update_usermeta( $user->ID, 'last_login', current_time('mysql') );
+}
+
+//function for getting the last login
+function get_last_login($user_id) {
+    $last_login = get_user_meta($user_id, 'last_login', true);
+
+    //picking up wordpress date time format
+    $date_format = get_option('date_format') . ' ' . get_option('time_format');
+
+    //converting the login time to wordpress format
+    $the_last_login = mysql2date($date_format, $last_login, false);
+
+    //finally return the value
+    return $the_last_login;
+}
+
+function new_time($a) { // преобразовываем время в нормальный вид
+   // date_default_timezone_set('Europe/Moscow');
+    $ndate = date('d.m.Y', $a);
+    $ndate_time = date('H:i', $a);
+    $ndate_exp = explode('.', $ndate);
+    $nmonth = array(
+        1 => 'янв',
+        2 => 'фев',
+        3 => 'мар',
+        4 => 'апр',
+        5 => 'мая',
+        6 => 'июн',
+        7 => 'июл',
+        8 => 'авг',
+        9 => 'сен',
+        10 => 'окт',
+        11 => 'ноя',
+        12 => 'дек'
+    );
+
+    foreach ($nmonth as $key => $value) {
+        if($key == intval($ndate_exp[1])) $nmonth_name = $value;
+    }
+
+    if($ndate == date('d.m.Y')) return 'Сегодня в '.$ndate_time;
+    elseif($ndate == date('d.m.Y', strtotime('-1 day'))) return 'Вчера в '.$ndate_time;
+    else return $ndate_exp[0].' '.$nmonth_name.' '.$ndate_exp[2].' в '.$ndate_time;
+}
+
+function get_subscription_end($user_id){
+    $duration = 'Не оплачено';
+    if(get_user_meta($user_id,'subscription_duration')){
+        $curr_dur = get_user_meta($user_id,'subscription_duration',1);
+       // prn($curr_dur);
+        $duration = 'Оплачено до: '.rus_date("j F Y", $curr_dur);
+    }
+    return $duration;
+}
+/*----------------------------------------------------END CABINET-----------------------------------------------------*/

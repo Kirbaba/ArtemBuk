@@ -970,4 +970,72 @@ function get_subscription_end($user_id){
     }
     return $duration;
 }
+
+add_action( 'admin_post_update_user', 'update_user_info' );
+add_action( 'admin_post_nopriv_update_user', 'update_user_info' );
+
+function update_user_info(){
+  prn($_POST);
+    if ( !empty( $_POST['nickname'] ) ) {
+        wp_update_user( array ('ID' => $_POST['user_id'], 'display_name' => esc_attr( $_POST['nickname'] ) ) ) ;
+        update_user_meta($_POST['user_id'], 'nickname', esc_attr( $_POST['nickname'] ) );
+        update_user_meta($_POST['user_id'], 'display_name', esc_attr( $_POST['nickname'] ) );
+    }
+
+    if(!empty( $_POST['user_email'])){
+        $email = $_POST['user_email'];
+
+        $userdata = array(
+            'ID' => $_POST['user_id,'],
+            'user_email' => $email
+        );
+        if(!wp_update_user( $userdata )){
+            echo "Возникла ошибка при редактировании почты.";
+        }
+    }
+    if(!empty($_POST['gender'])){
+        $gender = $_POST['gender'];
+        update_user_meta($_POST['user_id'],'gender',$gender);
+    }
+    if(!empty($_POST['living_place'])){
+        $living_place = $_POST['living_place'];
+
+        update_user_meta($_POST['user_id'],'living_place',$living_place);
+    }
+    if(!empty($_POST['bday'])){
+        $bday = $_POST['bday'];
+        update_user_meta($_POST['user_id'],'bday',$bday);
+    }
+    if(!empty($_POST['new_password'])){
+        $pass = $_POST['new_password'];
+    }
+    if(!empty($_POST['new_password_repeat'])){
+        $pass_repeat = $_POST['new_password_repeat'];
+    }
+
+    if(!empty($_FILES)){
+        if (!function_exists('wp_handle_upload')) {
+            require_once( ABSPATH . 'wp-admin/includes/file.php' ); }
+        $return = media_handle_upload('avatar', 0);
+
+        if (is_int($return)) {
+            echo "Файл успешно загружен. ID: $return";
+            update_user_meta($_POST['user_id'],'wp_user_avatar',$return);
+        } else {
+            echo "Возникла ошибка при загрузке файла, повторите попытку";
+        }
+    }
+
+    if($pass == $pass_repeat){
+        $new_pass = $pass;
+
+        update_user_meta($_POST['user_id,'], 'user_pass', $new_pass);
+        wp_set_password($new_pass,$_POST['user_id']);
+        wp_update_user( array ('ID' => $_POST['user_id,'], 'user_pass' => $new_pass) ) ;
+    }
+
+    /*header("HTTP/1.1 301 Moved Permanently");
+    header("Location: ".get_bloginfo('url')."/cabinet");
+    exit();*/
+}
 /*----------------------------------------------------END CABINET-----------------------------------------------------*/

@@ -13,7 +13,7 @@
 <!--                    <h3>--><?php //the_title(); ?><!--</h3>-->
 
                 </div>
-                <div class="page__body page__scrolltext">
+                <div class="page__body page__scrolltext page__read">
                     <div class="col-xs-12">
                         <article class="page__scrolltext">
                             <div class="preloader"></div>

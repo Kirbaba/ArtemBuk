@@ -16,9 +16,8 @@
 				 <!-- Nav tabs -->
 				<ul id="tabs" class="nav nav-tabs" role="tablist">
 					<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Профиль</a></li>
-					<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Подписки</a></li>
-					<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Заказы</a></li>
-					<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Корзина</a></li>
+					<li role="presentation"><a href="#subscription" aria-controls="subscription" role="tab" data-toggle="tab">Подписки</a></li>
+					<li role="presentation"><a href="#orders" aria-controls="orders" role="tab" data-toggle="tab">Заказы</a></li>
 					<!--<li role="presentation"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Сообщения</a>
 						<ul class="dropdown-menu">
 					      	<li><a href="#">Входящие</a></li>
@@ -53,6 +52,7 @@
 		<!-- close .page-cabinet__content--welcome -->
 		<div class="page__scrolltext page-cabinet__content--wrap">
 			<div id="tabs-content" class="tab-content">
+				<!--просмотр  профиля-->
 			    <div role="tabpanel" class="tab-pane active" id="home">
 					<div class="page__head">
 						<h3>Профиль <a href="#edit" class="edit" role="tab" data-toggle="tab">Редактировать</a></h3>
@@ -108,38 +108,57 @@
 					</div>
 
 			    </div>
-			    <div role="tabpanel" class="tab-pane" id="profile">2</div>
-			    <div role="tabpanel" class="tab-pane" id="messages">3</div>
-			    <div role="tabpanel" class="tab-pane" id="settings">4</div>
+				<!---->
+			    <div role="tabpanel" class="tab-pane" id="subscription">
+					<div class="page__head">
+						<h3>Подписки <a href="#home" class="edit" role="tab" data-toggle="tab">Профиль</a></h3>
+					</div>
+					<!-- close .page-cabinet__content--box --><!-- open .page-cabinet__content--box -->
+					<div class="page-cabinet__content--box">
+						<?php get_user_subscription($current_user->ID); ?>
+					</div>
+				</div>
+				<!---->
+			    <div role="tabpanel" class="tab-pane" id="orders">
+					<div class="page__head">
+						<h3>Заказы <a href="#home" class="edit" role="tab" data-toggle="tab">Профиль</a></h3>
+					</div>
+
+					<!-- close .page-cabinet__content--box --><!-- open .page-cabinet__content--box -->
+					<div class="page-cabinet__content--box">
+						<?php get_user_orders($current_user->ID); ?>
+					</div>
+				</div>
+				<!--редактирование профиля-->
 				<div role="tabpanel" class="tab-pane" id="edit">
 					<div class="page__head">
-						<h3>Редактирование профиля</h3>
+						<h3>Редактирование профиля <a href="#home" class="edit" role="tab" data-toggle="tab">Профиль</a></h3>
 					</div>
 					<!-- close .page-cabinet__content--box --><!-- open .page-cabinet__content--box -->
 					<div class="page-cabinet__content--box">
 						<div class="entry-content entry">
 							<form method="post" id="adduser" action="<?= get_bloginfo('url'); ?>/wp-admin/admin-post.php?action=update_user" enctype="multipart/form-data">
-								<label for="nickname">Nickname</label>
+								<label for="nickname">Ник</label>
 								<input type="text" name="nickname" id="nickname" class="buybook--inp" value="<?php echo $info->data->display_name; ?>" /><br />
-								<label for="user_email">Email</label>
+								<label for="user_email">Почта</label>
 								<input type="text" name="user_email" id="user_email" class="buybook--inp" value="<?php echo $info->data->user_email; ?>" /><br />
-								<label for="gender">Gender</label>
-								<input type="radio" name="gender" id="gender" class="" <?php if($meta['gender'][0] == 'male'){ echo 'checked';} ?> value="male" /> Мужик<br />
-								<input type="radio" name="gender" id="gender" class="" <?php if($meta['gender'][0] == 'female'){ echo 'checked';} ?> value="female" /> Женщина<br />
+								<label for="gender">Пол</label>
+								<input type="radio" name="gender" id="gender" class="" <?php if($meta['gender'][0] == 'male'){ echo 'checked';} ?> value="male" /> Мужской<br />
+								<input type="radio" name="gender" id="gender" class="" <?php if($meta['gender'][0] == 'female'){ echo 'checked';} ?> value="female" /> Женский<br />
 								<label for="bday">День рождения</label>
 								<input type="date" name="bday" id="bday" class="buybook--inp" value="<?php echo $meta['bday'][0]; ?>" /><br />
 
-								<label for="living_place">Living place</label>
+								<label for="living_place">Место проживания</label>
 								<input type="text" name="living_place" id="living_place" class="buybook--inp" value="<?php echo $meta['living_place'][0]; ?>" /><br />
-								<label for="new_password">New password</label>
+								<label for="new_password">Новый пароль</label>
 								<input type="password" name="new_password" id="new_password" class="buybook--inp" value="" /><br />
-								<label for="new_password_repeat">Repeat password</label>
+								<label for="new_password_repeat">Повторите пароль</label>
 								<input type="password" name="new_password_repeat" id="new_password_repeat" class="buybook--inp" value="" /><br />
-								<label for="avatar">Avatar</label>
+								<label for="avatar">Аватар</label>
 								<img id="current_avatar" src="<?php echo get_wp_user_avatar_src($current_user->ID); ?>" alt="">
 								<input type="file" name="avatar" id="avatar" class="buybook--inp">
 								<input type="hidden" name="user_id" id="user_id" class="" value="<?php echo $current_user->ID; ?>">
-								<input type="submit" value="Update" class="buybook--sub">
+								<input type="submit" value="Сохранить" class="buybook--sub">
 								<input type="reset" value="Отмена" class="buybook--sub">
 							</form><!-- #adduser -->
 						</div><!-- .entry-content -->

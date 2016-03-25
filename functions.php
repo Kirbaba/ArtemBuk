@@ -706,11 +706,21 @@ function admin_add_order() {
             update_user_meta( $user, $order_num, 0 );
         }
 
+        $wpdb->insert('subscriptions',array(
+            'order_num' => $order_num,
+            'price' => $price,
+            'status' => 0,
+            'duration' => 0,
+            'user_id' => $user,
+            'type' => $month,
+        ));
+
         // Handle request then generate response using echo or leaving PHP and using HTML
         header("HTTP/1.1 301 Moved Permanently");
         header("Location: ".get_bloginfo('url')."/order/?sum=".$price."&uid=".$user."&dur=".$month."&n=".$order_num);
         exit();
     }else{
+        $current_user = wp_get_current_user();
         $product_id = $_POST['buybook--id'];
         $product_price = $_POST['buybook--sum'];
         $email = $_POST['buybook--mail'];
@@ -721,7 +731,8 @@ function admin_add_order() {
             'book_id' => $product_id,
             'price' => $product_price,
             'email' => $email,
-            'status' => 0
+            'status' => 0,
+            'user_id' => $current_user->ID,
         ))){
             // Handle request then generate response using echo or leaving PHP and using HTML
             header("HTTP/1.1 301 Moved Permanently");
@@ -775,6 +786,13 @@ function set_order_status($order,$shp_item){
             //$neew = get_user_meta($user[0]->ID,'subscription_duration');
            // prn(date("m.d.y", $neew[0]));
         }
+
+        $wpdb->update('subscriptions',array(
+            'status' => 1,
+            'duration' => time(),
+        ),array(
+            'order_num' => $order,
+        ));
     }
 }
 
@@ -975,7 +993,7 @@ add_action( 'admin_post_update_user', 'update_user_info' );
 add_action( 'admin_post_nopriv_update_user', 'update_user_info' );
 
 function update_user_info(){
-  prn($_POST);
+  //prn($_POST);
     if ( !empty( $_POST['nickname'] ) ) {
         wp_update_user( array ('ID' => $_POST['user_id'], 'display_name' => esc_attr( $_POST['nickname'] ) ) ) ;
         update_user_meta($_POST['user_id'], 'nickname', esc_attr( $_POST['nickname'] ) );
@@ -987,7 +1005,7 @@ function update_user_info(){
 
         $userdata = array(
             'ID' => $_POST['user_id,'],
-            'user_email' => $email
+            'user_email' => esc_attr($email)
         );
         if(!wp_update_user( $userdata )){
             echo "Возникла ошибка при редактировании почты.";
@@ -1013,7 +1031,7 @@ function update_user_info(){
         $pass_repeat = $_POST['new_password_repeat'];
     }
 
-    if(!empty($_FILES)){
+    if(!empty($_FILES['avatar'])){
         if (!function_exists('wp_handle_upload')) {
             require_once( ABSPATH . 'wp-admin/includes/file.php' ); }
         $return = media_handle_upload('avatar', 0);
@@ -1034,8 +1052,24 @@ function update_user_info(){
         wp_update_user( array ('ID' => $_POST['user_id,'], 'user_pass' => $new_pass) ) ;
     }
 
-    /*header("HTTP/1.1 301 Moved Permanently");
+    header("HTTP/1.1 301 Moved Permanently");
     header("Location: ".get_bloginfo('url')."/cabinet");
-    exit();*/
+    exit();
+}
+
+//orders
+function get_user_orders($userid){
+    global $wpdb;
+    prn($userid);
+    $orders = $wpdb->get_results("SELECT * FROM `orders` WHERE `user_id`= $userid",ARRAY_A);
+    prn($orders);
+}
+
+//subscriptions
+function get_user_subscription($userid){
+    global $wpdb;
+    prn($userid);
+    $orders = $wpdb->get_results("SELECT * FROM `subscriptions` WHERE `user_id`= $userid",ARRAY_A);
+    prn($orders);
 }
 /*----------------------------------------------------END CABINET-----------------------------------------------------*/

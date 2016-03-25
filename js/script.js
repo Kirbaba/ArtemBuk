@@ -77,7 +77,7 @@ jQuery(document).ready( function(){
         });
     });
 
-    document.getElementById('avatar').onchange = function (evt) {
+    $(document).on('change','#avatar', function (evt) {
         var tgt = evt.target || window.event.srcElement,
             files = tgt.files;
 
@@ -95,7 +95,7 @@ jQuery(document).ready( function(){
             // fallback -- perhaps submit the input to an iframe and temporarily store
             // them on the server until the user's session ends.
         }
-    }
+    });
 
 });
 

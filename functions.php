@@ -1060,16 +1060,23 @@ function update_user_info(){
 //orders
 function get_user_orders($userid){
     global $wpdb;
-    prn($userid);
+
     $orders = $wpdb->get_results("SELECT * FROM `orders` WHERE `user_id`= $userid",ARRAY_A);
-    prn($orders);
+    //prn($orders);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/views/orders.php', ['orders' => $orders]);
 }
 
 //subscriptions
 function get_user_subscription($userid){
     global $wpdb;
-    prn($userid);
-    $orders = $wpdb->get_results("SELECT * FROM `subscriptions` WHERE `user_id`= $userid",ARRAY_A);
-    prn($orders);
+
+    $subscriptions = $wpdb->get_results("SELECT * FROM `subscriptions` WHERE `user_id`= $userid",ARRAY_A);
+   // prn($subscriptions);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/views/subscriptions.php', ['subscriptions' => $subscriptions]);
 }
+
 /*----------------------------------------------------END CABINET-----------------------------------------------------*/

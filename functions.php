@@ -264,6 +264,7 @@ add_filter( 'single_template', function ( $single_template ) {
     if ( has_category( 'read' ) || has_category( 'reviews' ) || has_category( 'jurisprudence' )  || has_category( $cat_names ) ) {
         $single_template = dirname( __FILE__ ) . '/single-read.php';
     }
+
     return $single_template;
 
 }, PHP_INT_MAX, 2 );
@@ -1080,3 +1081,27 @@ function get_user_subscription($userid){
 }
 
 /*----------------------------------------------------END CABINET-----------------------------------------------------*/
+/*---------------------------------------------------ADMIN PAGES------------------------------------------------------*/
+
+function register_orders_page(){
+    add_menu_page(
+        'Заказы', 'Заказы', 'manage_options', 'orders', 'admin_orders_page', '', 190
+    );
+}
+
+function admin_orders_page(){
+    global $wpdb;
+    $parser = new Parser();
+
+    if(isset($_GET['del'])){
+        $wpdb->delete( 'tea', ['id'=>$_GET['del']] );
+    }
+
+    $orders = $wpdb->get_results("SELECT * FROM tea", ARRAY_A);
+
+    $parser->render(TM_DIR . '/views/orders_admin_page.php', ['orders' => $orders]);
+}
+
+add_action( 'admin_menu', 'register_orders_page' );
+
+/*---------------------------------------------------END ADMIN PAGES--------------------------------------------------*/

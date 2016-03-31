@@ -48,7 +48,7 @@
 			aLetters[i] = new GradientLetters($(this), conf);
 			$(this).data("gradientText", aLetters[i]);	
 		});
-		
+
 		$(window).load(function() {
 			var iLetters_amount = aLetters.length;
 			for (var i = 0; i < iLetters_amount; i++) {

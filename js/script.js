@@ -58,9 +58,6 @@ jQuery(document).ready( function(){
         
     })(jQuery);
 
-    var api = $('.header--logo--slogan h3').gradientText({
-        colors: ['#4e5661', '#707682', '#747a85', '#a2a5b0', '#c9cbd4', '#eeeff0', '#d4d4d5', '#6c6f74', '#41444a', '#313539'],
-    });
 
     $(document).on('click', '.js-trip', function(){
         var id = $(this).attr('data-id');
@@ -86,7 +83,7 @@ jQuery(document).ready( function(){
             var fr = new FileReader();
             fr.onload = function () {
                 document.getElementById('current_avatar').src = fr.result;
-            }
+            };
             fr.readAsDataURL(files[0]);
         }
 
@@ -97,7 +94,37 @@ jQuery(document).ready( function(){
         }
     });
 
+    $('.main-content__item__body h3').textgrad({
+        maxGroup: 1,
+        type: '_',
+        colgrad: [{pc:0,col:'4e5661'},
+            {pc:10,col:'707682'},
+            {pc:20,col:'747a85'},
+            {pc:30,col:'a2a5b0'},
+            {pc:40,col:'c9cbd4'},
+            {pc:50,col:'eeeff0'},
+            {pc:60,col:'d4d4d5'},
+            {pc:70,col:'6c6f74'},
+            {pc:80,col:'41444a'},
+            {pc:90,col:'313539'}],
+    });
+    $('.header--logo--slogan h3').textgrad({
+        maxGroup: 1,
+        type: '_',
+        colgrad: [{pc:0,col:'4e5661'},
+            {pc:10,col:'707682'},
+            {pc:20,col:'747a85'},
+            {pc:30,col:'a2a5b0'},
+            {pc:40,col:'c9cbd4'},
+            {pc:50,col:'eeeff0'},
+            {pc:60,col:'d4d4d5'},
+            {pc:70,col:'6c6f74'},
+            {pc:80,col:'41444a'},
+            {pc:90,col:'313539'}],
+    });
+
 });
+
 
 jQuery(function($) {
     $('.mainpage-block').each( function(){

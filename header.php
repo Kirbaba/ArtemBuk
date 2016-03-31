@@ -52,6 +52,7 @@
                 </div>
             </div>
             <?php }else{ ?>
+                <?php echo get_ulogin_panel(); ?>
                 <div class="header--enter">
                     <form action="<?php echo get_option('home'); ?>/wp-login.php" method="post">
                         <a href="#" class="header--enter--but--active">Войти</a>
@@ -64,9 +65,7 @@
                             <input class="header--enter--form--btn" type="submit" name="submit" value="" />
                             </div>
                             <input type="hidden" name="redirect_to" class="header--enter--form--btn--sub" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
-                            <!--                        <div class="header--enter--form--btn">-->
-                            <!--                            <a href="#"></a>-->
-                            <!--                        </div>-->
+
                         </div>
                     </form>
                 </div>

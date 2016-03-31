@@ -23,13 +23,14 @@ function add_script(){
     wp_enqueue_script( 'my-bootstrap-extension', get_template_directory_uri() . '/js/bootstrap.js', array(), '1');
     wp_enqueue_script( 'lightbox', get_template_directory_uri() . '/js/lightbox-plus-jquery.min.js', array(), '1', 1);
     wp_enqueue_script( 'gradienttext', get_template_directory_uri() . '/js/jquery.gradienttext.js', array(), '1', 1);
-    wp_enqueue_script( 'measurer', get_template_directory_uri() . '/js/jquery.measurer.js', array(), '1', 1);
+  //  wp_enqueue_script( 'measurer', get_template_directory_uri() . '/js/jquery.measurer.js', array(), '1', 1);
     wp_enqueue_script( 'mCustomScrollbar', '//cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js', array(), '1', 1);
     wp_enqueue_script( 'vegas-js', get_template_directory_uri() . '/js/vegas.min.js', array(), '1');
-    wp_enqueue_script( 'gradient-js', get_template_directory_uri() . '/js/pxgradient-1.0.3.js', array(), '1');
+   // wp_enqueue_script( 'gradient-js', get_template_directory_uri() . '/js/pxgradient-1.0.3.js', array(), '1');
     wp_enqueue_script( 'cookie-js', get_template_directory_uri() . '/js/js.cookie.js', array(), '1');
     wp_enqueue_script( 'bookmark-js', get_template_directory_uri() . '/js/bookmark.js', array(), '1');
     wp_enqueue_script( 'illustration_grid', get_template_directory_uri() . '/js/illustration_grid.js', array(), '1', 1);
+    wp_enqueue_script( 'gradient', get_template_directory_uri() . '/js/gradient.js', array(), '1', 1);
     wp_enqueue_script( 'my-script', get_template_directory_uri() . '/js/script.js', array(), '1');
     //wp_enqueue_script( 'fotorama-js', get_template_directory_uri() . '/js/fotorama.js', array(), '1');
     wp_localize_script('my-script', 'myajax',
@@ -41,7 +42,7 @@ function add_script(){
 }
 
 function add_admin_script(){
-    wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-2.1.3.min.js', array(), '1');
+ //   wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-2.1.3.min.js', array(), '1');
     wp_enqueue_script('admin',get_template_directory_uri() . '/js/admin.js', array(), '1');
   //  wp_enqueue_style( 'my-bootstrap-extension-admin', get_template_directory_uri() . '/css/bootstrap.css', array(), '1');
   //  wp_enqueue_script( 'my-bootstrap-extension', get_template_directory_uri() . '/js/bootstrap.js', array(), '1');
@@ -1091,17 +1092,39 @@ function register_orders_page(){
 
 function admin_orders_page(){
     global $wpdb;
-    $parser = new Parser();
+
 
     if(isset($_GET['del'])){
-        $wpdb->delete( 'tea', ['id'=>$_GET['del']] );
+        $wpdb->delete( 'orders', ['id'=>$_GET['del']] );
     }
 
-    $orders = $wpdb->get_results("SELECT * FROM tea", ARRAY_A);
+    $orders = $wpdb->get_results("SELECT * FROM `orders`", ARRAY_A);
 
+    $parser = new Parser();
     $parser->render(TM_DIR . '/views/orders_admin_page.php', ['orders' => $orders]);
 }
 
 add_action( 'admin_menu', 'register_orders_page' );
 
+
+function admin_subscriptions_page(){
+    global $wpdb;
+
+
+    if(isset($_GET['del'])){
+        $wpdb->delete( 'subscriptions', ['id'=>$_GET['del']] );
+    }
+
+    $subscriptions = $wpdb->get_results("SELECT * FROM `subscriptions`", ARRAY_A);
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/views/subscriptions_admin_page.php', ['subscriptions' => $subscriptions]);
+}
+
+function register_subscriptions_page(){
+    add_menu_page(
+        'Подписки', 'Подписки', 'manage_options', 'subscriptions', 'admin_subscriptions_page', '', 191
+    );
+}
+add_action( 'admin_menu', 'register_subscriptions_page' );
 /*---------------------------------------------------END ADMIN PAGES--------------------------------------------------*/

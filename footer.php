@@ -26,11 +26,15 @@
 		</footer>	
 	</div>
 			<script type="text/javascript">
+
+				/*	jQuery('.main-content__item__body h3').gradientText({
+					colors: ['#4e5661', '#707682', '#747a85', '#a2a5b0', '#c9cbd4', '#eeeff0', '#d4d4d5', '#6c6f74', '#41444a', '#313539'],
+				});
 				jQuery(".main-content__item__body h3").pxgradient({ //произвольный селектор jQuery
 				step: 1, // размер шага градиента в пикселях. Меньше шаг — больше качество, но меньше производительность
 				colors: ['#747a85', '#a2a5b0', '#c9cbd4', '#eeeff0', '#d4d4d5', '#6c6f74'], // цвета. формат — hex (#4fc05a или #333)
 				dir: "x" // направление градиента. x — горизонтальное, y — вертикальное
-				});
+				});*/
 			</script>
 
 			<?php wp_footer(); ?>

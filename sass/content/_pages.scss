@@ -238,6 +238,13 @@
 		font-weight: bold;
 		font-size: 16px;
 	}
+	p {
+		img {
+			max-height: 230px;
+			display: block;
+			margin: 0 auto;
+		}
+	}
 }
 
 .buyabook {
@@ -322,11 +329,12 @@
 				width: 100%;
 				height: auto;	
 				position: absolute;
-				-moz-transform: rotateY(2deg) translateZ(-25px);
+				
 			    -webkit-transform: rotateY(2deg) translateZ(-25px);
 			    -o-transform: rotateY(2deg) translateZ(-25px);
 			    -ms-transform: rotateY(2deg) translateZ(-25px);
-			    transform: rotateY(2deg) translateZ(-25px);			
+			    transform: rotateY(2deg) translateZ(-25px);		
+			    -moz-transform: rotateY(-3deg) translateZ(2px);	
 			}
 		}
 		&--desc {
@@ -906,4 +914,8 @@
 			}
 		}
 	}
+}
+
+.welcome__box.page__scrolltext {
+	height: 275px;
 }

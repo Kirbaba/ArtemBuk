@@ -39,9 +39,9 @@
                                 if($user_sub > time()){
                             ?>
                             <div class="controls--format">
-                                <b><i>Скачать всю книгу полностью</i></b>
+                                <b><i>Скачать всю <br />книгу полностью</i></b>
                                 <?php  if ( get_post_meta(get_the_ID(), "linkzip", 1) ) : ?>
-                                    <a href="<?php echo get_post_meta(get_the_ID(), "linkzip", 1); ?>">*.zip</a>
+                                    <a href="<?php echo get_post_meta(get_the_ID(), "linkzip", 1); ?>">*.><img src="<?php bloginfo('template_directory'); ?>/img/zip.png" alt="" /></a>
                                 <?php endif; ?>
                             </div>
                                     <?php }else{ ?>

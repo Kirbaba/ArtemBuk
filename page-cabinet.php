@@ -72,7 +72,7 @@
 									if(isset($meta['living_place'][0]) && !empty($meta['living_place'][0])){
 										echo $meta['living_place'][0];
 									}else{
-										echo "не указанно";
+										echo "не указано";
 									}
 									?>
 								</span></p>

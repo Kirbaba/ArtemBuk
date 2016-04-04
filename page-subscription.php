@@ -26,7 +26,7 @@
 				<!-- open .ornament-top -->
 				<div class="ornament-top"></div>
 				<!-- close .ornament-top -->
-				<p>Подписка будет доступна после 1 июня 2016 года</p>
+				<p>Подписка на сайт доступна только зарегистрированным пользователям. Подписка будет открыта после 1 июня 2016 года</p>
 				<div class="preloader"></div>
 			</div>
 			<!-- close .page__scrolltext -->

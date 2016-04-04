@@ -94,7 +94,10 @@ jQuery(document).ready( function(){
         }
     });
 
-    $('.main-content__item__body h3, .header--logo--slogan h3').textgrad({
+    var api = $('.header--logo--slogan h3').gradientText({
+        colors: ['#4e5661', '#707682', '#747a85', '#a2a5b0', '#c9cbd4', '#eeeff0', '#d4d4d5', '#6c6f74', '#41444a', '#313539'],
+    });
+    $('.main-content__item__body h3').textgrad({
         maxGroup: 1,
         type: '_',
         colgrad: [{pc:0,col:'4e5661'},
@@ -129,7 +132,7 @@ jQuery(document).ready( function(){
 
 jQuery(function($) {
     $('.mainpage-block').each( function(){
-        var rnd = Math.random() * (5000 - 3000) + 3000;
+        var rnd = Math.random() * (15000 - 7000) + 7000;
         var id = $(this).attr('data-id');
         //console.log(id);
         var images = [];
@@ -143,7 +146,7 @@ jQuery(function($) {
         $(this).vegas({
             delay: rnd,
             timer: false,
-            transitionDuration: 4000,
+            transitionDuration: 1000,
             slides: images,
         });
     });

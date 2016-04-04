@@ -1,0 +1,7 @@
+#readtext p {
+	font-size: 16px;	
+}
+
+.small-text p{
+	font-size: 11px!important;
+}

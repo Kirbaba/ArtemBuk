@@ -8,10 +8,13 @@
 
         <!-- open .page-buyabook__row -->
             <a href="<?php the_permalink(); ?>" class="buyabook__item">
-							<span class="buyabook__item--img">
-								<span>
-									<?php the_post_thumbnail(); ?>
-								</span>
+							<span class="buyabook__item--img csstransforms3d">
+                                <span class="buyabook__item--img--trans book">
+                                    <span>
+                                        <?php the_post_thumbnail(); ?>
+                                    </span>
+                                </span>
+								
 
 							</span>
 							<span class="buyabook__item--desc">

@@ -5,3 +5,18 @@
 .small-text p{
 	font-size: 11px!important;
 }
+
+@media only screen and (max-width: 1200px) {
+	.welcome__box p { 
+		font-size: 12px!important;
+	}
+}
+
+.storepage-single--annotation .comment__item h4,.storepage-single--annotation p {
+	color: #FFF;
+}
+
+.welcome__box p {
+	color: #FFF !important;
+}
+

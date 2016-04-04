@@ -47,21 +47,21 @@
                                     <?php }else{ ?>
                                     <!-- open .controls--format -->
                                     <div class="controls--format">
-                                        <b><i>Скачать 50% книги</i></b>
+                                        <b><i>Скачать<br />книгу</i></b>
                                         <?php  if ( get_post_meta(get_the_ID(), "link50pdf", 1) ) : ?>
-                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50pdf", 1); ?>">pdf</a>
+                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50pdf", 1); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/PDF-Icon.png" alt="" /></a>
                                         <?php endif; ?>
                                         <?php  if ( get_post_meta(get_the_ID(), "link50fb2", 1) ) : ?>
-                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50fb2", 1); ?>">fb2</a>
+                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50fb2", 1); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/fb2.png" alt="" /></a>
                                         <?php endif; ?>
                                         <?php  if ( get_post_meta(get_the_ID(), "link50epub", 1) ) : ?>
-                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50epub", 1); ?>">epub</a>
+                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50epub", 1); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/epub.png" alt="" /></a>
                                         <?php endif; ?>
                                         <?php  if ( get_post_meta(get_the_ID(), "link50rtf", 1) ) : ?>
-                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50rtf", 1); ?>">rtf</a>
+                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50rtf", 1); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/rtf.png" alt="" /></a>
                                         <?php endif; ?>
                                         <?php  if ( get_post_meta(get_the_ID(), "link50html", 1) ) : ?>
-                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50html", 1); ?>">html</a>
+                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50html", 1); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/HTML.png" alt="" /></a>
                                         <?php endif; ?>
                                     </div>
                             <!-- close .controls--format -->

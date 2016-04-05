@@ -46,7 +46,7 @@ $encoding = "utf-8";
 
 // формирование подписи
 // generate signature
-$crc  = md5("$mrh_login:$out_summ:$inv_id:$mrh_test_pass1:shp_Item=$shp_item");
+$crc  = md5("$mrh_login:$out_summ:$inv_id:$mrh_pass1:shp_Item=$shp_item");
 
 
 // HTML-страница с кассой
@@ -71,7 +71,7 @@ $crc  = md5("$mrh_login:$out_summ:$inv_id:$mrh_test_pass1:shp_Item=$shp_item");
 								"src='https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?".
 								"MerchantLogin=$mrh_login&OutSum=$out_summ&InvoiceID=$inv_id".
 								"&Description=$inv_desc&SignatureValue=$crc&shp_Item=$shp_item".
-								"&Culture=$culture&Encoding=$encoding&IsTest=1'></script></html>";
+								"&Culture=$culture&Encoding=$encoding&IsTest=0'></script></html>";
 							?>
 							<?php
 							print "<html><script language=JavaScript src='https://auth.robokassa.ru/Merchant/WebService/Service.asmx/GetCurrencies?MerchantLogin=$mrh_login&Language=ru'></script></html>";

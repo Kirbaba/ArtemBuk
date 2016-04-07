@@ -14,14 +14,14 @@
 <div class="container">
     <header class="header">
         <div class="col-xs-4">
-            <a href="/" class="header--logo">
-                <div class="header--logo--img">
+            <div class="header--logo">
+                <a href"/" class="header--logo--img">
                     <img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="">
-                </div>
+                </a>
                 <div class="header--logo--slogan">
-                    <h3>Революция крови разрушь старый мир</h3>
+                    <a href="http://artembuk.com/forum/viewforum.php?f=6" class="header__controls--read">Сообщество "Тайная фантастика"</a>
                 </div>
-            </a>
+            </div>
         </div>
         <div class="col-xs-4">
             <div class="header--title">

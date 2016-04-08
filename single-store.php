@@ -41,7 +41,7 @@
                             <div class="controls--format">
                                 <b><i>Скачать всю <br />книгу полностью</i></b>
                                 <?php  if ( get_post_meta(get_the_ID(), "linkzip", 1) ) : ?>
-                                    <a href="<?php echo get_post_meta(get_the_ID(), "linkzip", 1); ?>">*.><img src="<?php bloginfo('template_directory'); ?>/img/zip.png" alt="" /></a>
+                                    <a href="<?php echo get_post_meta(get_the_ID(), "linkzip", 1); ?>" download><img src="<?php bloginfo('template_directory'); ?>/img/zip.png" alt="" /></a>
                                 <?php endif; ?>
                             </div>
                                     <?php }else{ ?>
@@ -49,19 +49,19 @@
                                     <div class="controls--format">
                                         <b><i>Скачать<br />книгу</i></b>
                                         <?php  if ( get_post_meta(get_the_ID(), "link50pdf", 1) ) : ?>
-                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50pdf", 1); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/PDF-Icon.png" alt="" /></a>
+                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50pdf", 1); ?>" download><img src="<?php bloginfo('template_directory'); ?>/img/PDF-Icon.png" alt="" /></a>
                                         <?php endif; ?>
                                         <?php  if ( get_post_meta(get_the_ID(), "link50fb2", 1) ) : ?>
-                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50fb2", 1); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/fb2.png" alt="" /></a>
+                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50fb2", 1); ?>" download><img src="<?php bloginfo('template_directory'); ?>/img/fb2.png" alt="" /></a>
                                         <?php endif; ?>
                                         <?php  if ( get_post_meta(get_the_ID(), "link50epub", 1) ) : ?>
-                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50epub", 1); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/epub.png" alt="" /></a>
+                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50epub", 1); ?>" download><img src="<?php bloginfo('template_directory'); ?>/img/epub.png" alt="" /></a>
                                         <?php endif; ?>
                                         <?php  if ( get_post_meta(get_the_ID(), "link50rtf", 1) ) : ?>
-                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50rtf", 1); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/rtf.png" alt="" /></a>
+                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50rtf", 1); ?>" download><img src="<?php bloginfo('template_directory'); ?>/img/rtf.png" alt="" /></a>
                                         <?php endif; ?>
                                         <?php  if ( get_post_meta(get_the_ID(), "link50html", 1) ) : ?>
-                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50html", 1); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/HTML.png" alt="" /></a>
+                                            <a href="<?php echo get_post_meta(get_the_ID(), "link50html", 1); ?>" download><img src="<?php bloginfo('template_directory'); ?>/img/HTML.png" alt="" /></a>
                                         <?php endif; ?>
                                     </div>
                             <!-- close .controls--format -->

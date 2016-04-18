@@ -426,18 +426,18 @@ add_shortcode('blocks', 'blocksShortcode');
 /*------------------------------------------ КОНЕЦ БЛОКОВ НА ГЛАВНОЙ -------------------------------------------------*/
 /*------------------------------------------------ ОТЗЫВЫ ------------------------------------------------------------*/
 
-    function getReviews(){
-        $args = array(
-            'category_name' => 'reviews',
-            'posts_per_page' => -1);
+function getReviews(){
+    $args = array(
+        'category_name' => 'reviews',
+        'posts_per_page' => -1);
 
-        $my_query = new WP_Query($args);
+    $my_query = new WP_Query($args);
 
-        $parser = new Parser();
-        $parser->render(TM_DIR . '/views/reviews.php', ['my_query' => $my_query]);
-    }
+    $parser = new Parser();
+    $parser->render(TM_DIR . '/views/reviews.php', ['my_query' => $my_query]);
+}
 
-    add_shortcode('reviews','getReviews');
+add_shortcode('reviews','getReviews');
 
 /*--------------------------------------------- КОНЕЦ ОТЗЫВОВ --------------------------------------------------------*/
 /*--------------------------------------------- ПУТЕШЕСТВИЯ ----------------------------------------------------------*/

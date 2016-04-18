@@ -20,26 +20,26 @@
 							<span class="buyabook__item--desc">
 								<p><?php echo get_post_meta(get_the_ID(), "author", 1); ?></p>
 								<p>“<?php the_title(); ?>”</p>
-								<span class="buyabook__item--desc--price"><?php echo get_post_meta(get_the_ID(), "price", 1); ?> руб</span>
+								<!--<span class="buyabook__item--desc--price"><?php /*echo get_post_meta(get_the_ID(), "price", 1); */?> руб</span>-->
 							</span>
             </a>
         <!-- close .page-buyabook__row -->
         <?php
-        if($new_line % 3 == 0){
+        if($new_line % 5 == 0){
             echo '</div>';
             $new_line = 0;
         }
         //prn($new_line);
     endwhile;
-    if($new_line % 3 != 0){
+    if($new_line % 5 != 0){
         echo '<a href="/subscription" class="buyabook__item">
                 <span class="buyabook__item--img--sub">
                     <img src="'.get_bloginfo('template_directory').'/img/adress-book.png" alt="" />
 
                 </span>
                 <span class="buyabook__item--desc">
-                    <p>Купить подписку</p>
-                    <span class="buyabook__item--desc--price">300 руб</span>
+                    <p>Оформить подписку</p>
+                   <!--<span class="buyabook__item--desc--price">300 руб</span>-->
                 </span>
             </a></div>';
     }else{
@@ -50,7 +50,7 @@
                     </span>
                     <span class="buyabook__item--desc">
                         <p>Купить подписку</p>
-                        <span class="buyabook__item--desc--price">300 руб</span>
+                       <!--<span class="buyabook__item--desc--price">300 руб</span>-->
                     </span>
                 </a></div>';
     }

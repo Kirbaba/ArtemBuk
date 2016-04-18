@@ -4,10 +4,11 @@
 
             <div class="page__head">
                 <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
-                    <?php if(function_exists('bcn_display'))
+                    <h3><?php the_title(); ?></h3>
+                   <!-- --><?php /*if(function_exists('bcn_display'))
                     {
                         bcn_display();
-                    }?>
+                    }*/?>
                 </div>
             </div>
             <div class="page__body page__body--wrap page__scrolltext storepage-single">

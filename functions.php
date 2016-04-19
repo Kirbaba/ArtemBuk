@@ -275,6 +275,10 @@ add_filter( 'single_template', function ( $single_template ) {
         $single_template = dirname( __FILE__ ) . '/single-read.php';
     }
 
+    if ( has_category( 'community' )) {
+        $single_template = dirname( __FILE__ ) . '/single-community.php';
+    }
+
     return $single_template;
 
 }, PHP_INT_MAX, 2 );

@@ -70,7 +70,7 @@
                             <?php } ?>
                                     </div>
                         <!-- close .storepage-single__head--controls -->
-
+                        <a href="/category/reviews/" ><img src="<?php bloginfo('template_directory'); ?>/img/adress-book.png" alt="" /><span>Рецензии</span></a>
                     </div>
                     <!-- close .storepage-single__head -->
 

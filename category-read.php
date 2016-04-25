@@ -22,7 +22,7 @@
 						</span>
 						</a>
 					<?php } ?>
-					<a href="<?php the_permalink(); ?>" class="category__item">
+					<a href="" class="category__item js-read-modal" data-toggle="modal" data-target="#myModal" data-id="<?php echo get_the_ID(); ?>">
 						<span class="category__item--wrap">
 							<?php the_post_thumbnail(); ?>
 							<span class="category__item--title"><?php the_title(); ?></span>
@@ -31,99 +31,22 @@
 					<?php $i++; ?>
 				<?php endwhile; ?>
 				<?php  endif;?>
-				<!--<a href="#" class="category__item">
-				<span class="category__item--wrap">
-					<img src="<?php bloginfo('template_directory'); ?>/img/@Elf@.jpg" alt="">
-					<span class="category__item--title">Советы начинающим</span>
-				</span>
-				</a>
-				<a href="#" class="category__item">
-				<span class="category__item--wrap">
-					<img src="<?php bloginfo('template_directory'); ?>/img/photo2.jpg" alt="">
-					<span class="category__item--title">Мои мечты и планы</span>
-				</span>
-				</a>
-				<a href="#" class="category__item">
-				<span class="category__item--wrap">
-					<img src="<?php bloginfo('template_directory'); ?>/img/photo3.jpg" alt="">
-					<span class="category__item--title">Водопады Игуассу</span>
-				</span>
-				</a>
-				<a href="#" class="category__item">
-				<span class="category__item--wrap">
-					<img src="<?php bloginfo('template_directory'); ?>/img/photo4.jpg" alt="">
-					<span class="category__item--title">Ниагарский водопад</span>
-				</span>
-				</a>
-				<a href="#" class="category__item">
-				<span class="category__item--wrap">
-					<img src="<?php bloginfo('template_directory'); ?>/img/photo5.jpg" alt="">
-					<span class="category__item--title">Чичен-Итца,Тулум, Коба, Исапа</span>
-				</span>
-				</a>
-				<a href="#" class="category__item">
-				<span class="category__item--wrap">
-					<img src="<?php bloginfo('template_directory'); ?>/img/photo6.jpg" alt="">
-					<span class="category__item--title">Карибы</span>
-				</span>
-				</a>
-				<a href="#" class="category__item">
-				<span class="category__item--wrap">
-					<img src="<?php bloginfo('template_directory'); ?>/img/photo7.jpg" alt="">
-					<span class="category__item--title">Индия</span>
-				</span>
-				</a>
-				<a href="#" class="category__item">
-				<span class="category__item--wrap">
-					<img src="<?php bloginfo('template_directory'); ?>/img/photo8.jpg" alt="">
-					<span class="category__item--title">Австралия и Новая Зеландия</span>
-				</span>
-				</a>
-				<a href="#" class="category__item">
-				<span class="category__item--wrap">
-					<img src="<?php bloginfo('template_directory'); ?>/img/photo9.jpg" alt="">
-					<span class="category__item--title">Мачу Пикчу</span>
-				</span>
-				</a>
-				<a href="#" class="category__item">
-				<span class="category__item--wrap">
-					<img src="<?php bloginfo('template_directory'); ?>/img/photo10.jpg" alt="">
-					<span class="category__item--title">Каньоны США</span>
-				</span>
-				</a>
-				<a href="#" class="category__item">
-				<span class="category__item--wrap">
-					<img src="<?php bloginfo('template_directory'); ?>/img/photo11.jpg" alt="">
-					<span class="category__item--title">Китай</span>
-				</span>
-				</a>
-				<a href="#" class="category__item">
-				<span class="category__item--wrap">
-					<img src="<?php bloginfo('template_directory'); ?>/img/photo12.jpg" alt="">
-					<span class="category__item--title">Полинезия</span>
-				</span>
-				</a>
-				<a href="#" class="category__item">
-				<span class="category__item--wrap">
-					<img src="<?php bloginfo('template_directory'); ?>/img/photo13.jpg" alt="">
-					<span class="category__item--title">Любимые города и замки Европы</span>
-				</span>
-				</a>
-				<a href="#" class="category__item">
-				<span class="category__item--wrap">
-					<img src="<?php bloginfo('template_directory'); ?>/img/photo14.jpg" alt="">
-					<span class="category__item--title">Норвегия и Фареры</span>
-				</span>
-				</a>
-				<a href="#" class="category__item">
-				<span class="category__item--wrap">
-					<img src="<?php bloginfo('template_directory'); ?>/img/photo15.jpg" alt="">
-					<span class="category__item--title">Испания</span>
-				</span>
-				</a>-->
 				<div class="preloader"></div>
 			</div>
 		</div>
 	</div>
+<!-- Modal -->
+	<div class="modal fade" id='myModal' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class=" page__scrolltext modal-content grey-text">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div>
+	    	<!-- open .modal-content--img -->
+			<div class="js-read-modal-content">
 
+			</div>
+	    	<div class="preloader"></div>
+	  </div>
+	</div>	
 <?get_footer()?>

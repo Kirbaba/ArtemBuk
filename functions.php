@@ -473,6 +473,25 @@ function getTrip(){
 
 /*--------------------------------------------- МАГАЗИН -----------------------------------------------------*/
 
+// AJAX ACTION
+add_action('wp_ajax_readContent', 'readContent');
+add_action('wp_ajax_nopriv_readContent', 'readContent');
+
+function readContent(){
+    if($_POST){
+        $post_id = $_POST['id'];
+        $post = get_post($post_id);
+        
+        //content
+        $content = $post->post_content;
+        $content = apply_filters('the_content', $content);
+        $content = str_replace(']]>', ']]&gt;', $content);
+        $html = '<p>'.$content.'</p>';
+        echo $html;
+    }
+    die();
+}
+
 /*function my_attachments( $attachments )
 {
     $fields         = array(

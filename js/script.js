@@ -127,6 +127,23 @@ jQuery(document).ready( function(){
             {pc:90,col:'313539'}],
     });*/
 
+    $(document).on('click','.js-read-modal', function(){
+        var id = $(this).attr('data-id');
+
+        jQuery.ajax({
+            url: myajax.url, //url, к которому обращаемся
+            type: "POST",
+            data: "action=readContent&id=" + id, //данные, которые передаем. Обязательно для action указываем имя нашего хука
+            success: function (data) {
+                // console.log(data);
+                //$('#all').before(data);
+                $('.js-read-modal-content').html(data);
+                //$('#myModal').modal('show');
+            }
+        });
+        return false;
+    });
+
 });
 
 
@@ -156,6 +173,7 @@ jQuery(function($){
     $('#myModal').on('hidden.bs.modal', function () {
         // do something…
         $('.js-trip-modal').html('');
+        $('.js-read-modal-content').html('');
     })
 });
 jQuery(function($){

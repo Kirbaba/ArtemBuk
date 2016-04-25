@@ -28,8 +28,19 @@
                         <!-- close .storepage-single__head--book -->
                         <!-- open .storepage-single__head--controls -->
                         <div class="storepage-single__head--controls">
-                            <h3><?php the_title(); ?></h3>
-                            <h4><i><?php echo get_post_meta(get_the_ID(), "author", 1); ?></i></h4>
+                            <!-- open .storepage-single__head--controls--title -->
+                            <div class="storepage-single__head--controls--title">
+                                <h3><?php the_title(); ?></h3>
+                                <h4><i><?php echo get_post_meta(get_the_ID(), "author", 1); ?></i></h4>
+                            </div>
+                            <!-- close .storepage-single__head--controls--title -->
+                            <!-- open .storepage-single__head--controls--recens -->
+                            <div class="storepage-single__head--controls--recens">
+                                <a href="/category/reviews/" ><img src="<?php bloginfo('template_directory'); ?>/img/adress-book.png" alt="" /><span>Рецензии</span></a>
+                            </div>
+                            <!-- close .storepage-single__head--controls--recens -->
+                            
+                            
                             <a href="<?php echo get_post_meta(get_the_ID(), "linkread", 1); ?>" class="controls--read"><b><i>Читать книгу</i></b></a>
 
                             <?php $user = get_current_user_id();
@@ -70,7 +81,7 @@
                             <?php } ?>
                                     </div>
                         <!-- close .storepage-single__head--controls -->
-                        <a href="/category/reviews/" ><img src="<?php bloginfo('template_directory'); ?>/img/adress-book.png" alt="" /><span>Рецензии</span></a>
+                        
                     </div>
                     <!-- close .storepage-single__head -->
 

@@ -443,8 +443,27 @@
 			   -moz-box-sizing: border-box;
 			        box-sizing: border-box;
 			padding: 0 50px;
+			&--title {
+				float: left;
+				width: 60%;
+			}
+			&--recens {
+				float: left;
+				width: 40%;
+				text-align: center;
+				margin-bottom: 15px;
+				margin-top: 10px;
+				a {
+					color: #FFF;
+					img {
+						width: 50px;
+						display: block;
+						margin: 10px auto 5px;
+					}
+				}
+			}
 			h3 {
-				font-size: 30px;
+				font-size: 26px;
 				font-weight: bold;
 				margin-bottom: 0;
 			}

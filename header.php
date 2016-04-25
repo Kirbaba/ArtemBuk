@@ -19,7 +19,9 @@
                     <img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="">
                 </a>
                 <div class="header--logo--slogan">
-                    <a href="http://artembuk.com/forum/viewforum.php?f=6" class="header__controls--read"><span class="icon"><i></i></span><span class="text">Сообщество "Тайная фантастика"</span></a>
+                    <a href="http://artembuk.com/forum/viewforum.php?f=6" class=""><span class="text">Кандидатам в сообщество «Тайная фантастика»</span>
+                        <img src="<?php bloginfo('template_directory'); ?>/img/wLSrTwT1QZg.png" alt="" />
+                    </a>
                 </div>
             </div>
         </div>

@@ -15,11 +15,11 @@
     <header class="header">
         <div class="col-xs-4">
             <div class="header--logo">
-                <a href"/" class="header--logo--img">
+                <a href="/" class="header--logo--img">
                     <img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="">
                 </a>
                 <div class="header--logo--slogan">
-                    <a href="http://artembuk.com/forum/viewforum.php?f=6" class="header__controls--read">Сообщество "Тайная фантастика"</a>
+                    <a href="http://artembuk.com/forum/viewforum.php?f=6" class="header__controls--read"><span class="icon"><i></i></span><span class="text">Сообщество "Тайная фантастика"</span></a>
                 </div>
             </div>
         </div>

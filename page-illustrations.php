@@ -1,4 +1,4 @@
-<? get_header() ?>
+<?php get_header() ?>
 	<div class="col-xs-12">
 		<div class="page__wrapper">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -43,4 +43,4 @@
 			<?php endif; ?>
 		</div>
 	</div>
-<? get_footer() ?>
+<?php get_footer() ?>
